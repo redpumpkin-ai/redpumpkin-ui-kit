@@ -189,7 +189,7 @@ AI Notes
 - Identify provider requirements by scanning exports; add minimal providers to story `render`
 - Use controlled props where applicable to make elements visible in Docs
 
-## Phase 11 — Automation (Optional but Recommended)
+## [x] Phase 11 — Automation (Optional but Recommended)
 
 - Generate skeleton stories for all files in `lib/components/ui/*.tsx`
 - Derive story `title` as `UI/<PascalCaseName>` and default `args`
