@@ -169,7 +169,7 @@ AI Notes
 - Provide keyboard interaction tests with `userEvent.keyboard`
 - Use bounded container elements to keep overlays in the viewport for screenshots
 
-## Phase 9 — Layout and Utility
+## [x] Phase 9 — Layout and Utility
 
 - `Accordion`, `Collapsible`, `Resizable`, `ScrollArea`, `AspectRatio`, `Card`, `Breadcrumb`, `Avatar`, `Badge`, `Separator`, `Kbd`, `Spinner`, `Skeleton`, `Empty`
 - Keep stories simple with visible states; expose size/variant props via controls
