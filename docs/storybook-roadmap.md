@@ -159,7 +159,7 @@ AI Notes
 - Use `action('onChange')`/`action('onSubmit')` from `@storybook/addon-actions` to surface events
 - Keep form examples focused to avoid noisy Docs; one short field group is enough
 
-## Phase 8 — Navigation and Menus
+## [x] Phase 8 — Navigation and Menus
 
 - `Menubar` and `NavigationMenu`: include nested items; ensure keyboard navigation works in `play`
 - `ContextMenu`: render a target area and open via right-click in `play`
