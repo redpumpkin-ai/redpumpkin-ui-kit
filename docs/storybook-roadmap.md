@@ -129,7 +129,7 @@ AI Notes
 - Prefer controlled `args` for visibility in the playground; uncontrolled trigger-only stories make Docs empty
 - Use `await userEvent.click(...)` in `play` to validate open/close behavior
 
-## Phase 6 — Data Display and Examples
+## [x] Phase 6 — Data Display and Examples
 
 - `Table`: provide sample rows and nested header/body; expose density props via controls
 - `Chart`: include demo dataset and `ChartConfig`; show `ChartLegendContent` and `ChartTooltipContent`
