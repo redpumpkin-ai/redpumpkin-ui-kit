@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import userEvent from "@testing-library/user-event";
 import {
   HoverCard,
   HoverCardContent,
@@ -17,6 +18,9 @@ const meta = {
   tags: ["autodocs"],
   args: {
     open: false,
+  },
+  argTypes: {
+    onOpenChange: { action: "onOpenChange" },
   },
   parameters: {
     controls: {
@@ -54,6 +58,11 @@ export const Default: Story = {
       </HoverCardContent>
     </HoverCard>
   ),
+  play: async ({ canvasElement }) => {
+    const buttons = Array.from(canvasElement.querySelectorAll("button"));
+    const trigger = buttons.find((b) => /@nextjs/i.test(b.textContent || ""));
+    if (trigger) await userEvent.hover(trigger);
+  },
 };
 
 export const Controlled: Story = {
@@ -62,6 +71,9 @@ export const Controlled: Story = {
   },
   render: (args) => (
     <HoverCard {...args}>
+      <HoverCardTrigger asChild>
+        <Button variant="outline">Anchor</Button>
+      </HoverCardTrigger>
       <HoverCardContent>
         <div className="p-4">
           <p>

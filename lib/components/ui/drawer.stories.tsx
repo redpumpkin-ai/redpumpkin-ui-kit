@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import userEvent from "@testing-library/user-event";
 import {
   Drawer,
   DrawerClose,
@@ -26,6 +27,9 @@ const meta = {
   tags: ["autodocs"],
   args: {
     open: false,
+  },
+  argTypes: {
+    onOpenChange: { action: "onOpenChange" },
   },
   parameters: {
     controls: {
@@ -61,6 +65,11 @@ export const Default: Story = {
       </DrawerContent>
     </Drawer>
   ),
+  play: async ({ canvasElement }) => {
+    const buttons = Array.from(canvasElement.querySelectorAll("button"));
+    const trigger = buttons.find((b) => /open drawer/i.test(b.textContent || ""));
+    if (trigger) await userEvent.click(trigger);
+  },
 };
 
 export const Controlled: Story = {

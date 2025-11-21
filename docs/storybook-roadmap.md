@@ -118,7 +118,7 @@ AI Notes
 - Build `subcomponents` map from actual named exports of the file to show prop tables
 - For compositions, use `render` and supply minimal DOM to demonstrate behavior
 
-## Phase 5 — Overlay Components (Controlled)
+## [x] Phase 5 — Overlay Components (Controlled)
 
 - For overlays (`Dialog`, `AlertDialog`, `Drawer`, `Sheet`, `Popover`, `Tooltip`, `HoverCard`): expose `open` and `onOpenChange` in `args`
 - Provide a `Controlled` story that sets `open: true` so Docs shows the content

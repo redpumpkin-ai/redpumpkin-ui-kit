@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import userEvent from "@testing-library/user-event";
 import {
   Tooltip,
   TooltipContent,
@@ -16,6 +17,9 @@ const meta = {
   tags: ["autodocs"],
   args: {
     open: false,
+  },
+  argTypes: {
+    onOpenChange: { action: "onOpenChange" },
   },
   parameters: {
     controls: {
@@ -39,6 +43,11 @@ export const Default: Story = {
       </TooltipContent>
     </Tooltip>
   ),
+  play: async ({ canvasElement }) => {
+    const buttons = Array.from(canvasElement.querySelectorAll("button"));
+    const trigger = buttons.find((b) => /hover me/i.test(b.textContent || ""));
+    if (trigger) await userEvent.hover(trigger);
+  },
 };
 
 export const Controlled: Story = {
@@ -47,6 +56,9 @@ export const Controlled: Story = {
   },
   render: (args) => (
     <Tooltip {...args}>
+      <TooltipTrigger asChild>
+        <Button variant="outline">Anchor</Button>
+      </TooltipTrigger>
       <TooltipContent>
         <p>This tooltip is controlled with the open prop set to true by default.</p>
       </TooltipContent>
