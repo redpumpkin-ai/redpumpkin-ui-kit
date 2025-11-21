@@ -178,7 +178,7 @@ AI Notes
 
 - For utility primitives, ensure Docs displays their prop table even if the visual is minimal
 
-## Phase 10 — Providers and System Components
+## [x] Phase 10 — Providers and System Components
 
 - `Sidebar`: wrap stories with `SidebarProvider`; expose state via `useSidebar`-driven args
 - `Sonner`: render `Toaster` and provide a button in `render` to trigger a toast
