@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar, AvatarFallback } from "./avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "./avatar";
 
 const meta: Meta<typeof Avatar> = {
   title: "UI/Avatar",
   component: Avatar,
+  subcomponents: { AvatarImage, AvatarFallback },
   tags: ["autodocs"],
   args: { children: <AvatarFallback>RP</AvatarFallback> },
   parameters: {

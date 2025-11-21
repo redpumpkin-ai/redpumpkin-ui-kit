@@ -203,7 +203,7 @@ AI Notes
   - For each module, inspect named exports and write `*.stories.tsx` next to it
   - Add `tags: ['autodocs']`, default `args`, and `parameters.controls.exclude`
 
-## Phase 12 — Quality Gates
+## [x] Phase 12 — Quality Gates
 
 - Run `npm run lint` and fix issues
 - Run `npm run build-storybook` to validate Docs and controls

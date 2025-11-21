@@ -1,9 +1,31 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "./select";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "./select";
 
 const meta = {
   title: "UI/Select",
   component: Select,
+  subcomponents: {
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectScrollDownButton,
+    SelectScrollUpButton,
+    SelectSeparator,
+    SelectTrigger,
+    SelectValue,
+  },
   tags: ["autodocs"],
   argTypes: {
     onValueChange: { action: "onValueChange" },

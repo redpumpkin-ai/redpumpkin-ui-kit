@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Calendar } from "./calendar";
+import { Calendar, CalendarDayButton } from "./calendar";
 
 const meta: Meta<typeof Calendar> = {
   title: "UI/Calendar",
   component: Calendar,
+  subcomponents: { CalendarDayButton },
   tags: ["autodocs"],
   args: {
     mode: "single",

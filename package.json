@@ -23,7 +23,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006 --disable-telemetry",
-    "build-storybook": "storybook build"
+    "prebuild-storybook": "npm run quality:storybook",
+    "build-storybook": "storybook build",
+    "quality:storybook": "node scripts/check-stories.mjs"
   },
   "peerDependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
