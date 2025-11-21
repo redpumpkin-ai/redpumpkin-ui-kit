@@ -9,6 +9,9 @@ const meta: Meta<typeof Input> = {
   parameters: {
     controls: { exclude: ["className", "style", "ref", "asChild"] },
   },
+  argTypes: {
+    onChange: { action: "onChange" },
+  },
 };
 
 export default meta;

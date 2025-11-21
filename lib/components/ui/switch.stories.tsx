@@ -9,6 +9,9 @@ const meta: Meta<typeof Switch> = {
   parameters: {
     controls: { exclude: ["className", "style", "ref", "asChild"] },
   },
+  argTypes: {
+    onCheckedChange: { action: "onCheckedChange" },
+  },
 };
 
 export default meta;

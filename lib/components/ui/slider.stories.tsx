@@ -9,6 +9,9 @@ const meta: Meta<typeof Slider> = {
   parameters: {
     controls: { exclude: ["className", "style", "ref", "asChild"] },
   },
+  argTypes: {
+    onValueChange: { action: "onValueChange" },
+  },
 };
 
 export default meta;

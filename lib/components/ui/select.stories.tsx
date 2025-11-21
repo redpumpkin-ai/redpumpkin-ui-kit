@@ -5,6 +5,9 @@ const meta = {
   title: "UI/Select",
   component: Select,
   tags: ["autodocs"],
+  argTypes: {
+    onValueChange: { action: "onValueChange" },
+  },
   parameters: {
     controls: { exclude: ["className", "style", "ref", "asChild"] },
   },

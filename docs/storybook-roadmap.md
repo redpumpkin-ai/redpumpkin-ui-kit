@@ -141,7 +141,7 @@ AI Notes
 - Include concise but realistic demo data; keep props exhaustive and controls responsive
 - Verify that `ChartConfig` types render correctly in Docs; add `argTypes` for config keys if needed
 
-## Phase 7 — Inputs and Forms
+## [x] Phase 7 — Inputs and Forms
 
 - `Input`, `Textarea`, `Checkbox`, `RadioGroup`, `Switch`, `Slider`, `Select`, `InputOTP`: expose their value/state and event callbacks via controls and actions
 - `Form` + `Field`: demonstrate integration with `react-hook-form` and `zod`

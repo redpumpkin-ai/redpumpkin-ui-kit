@@ -10,6 +10,9 @@ const meta: Meta<typeof InputOTP> = {
   parameters: {
     controls: { exclude: ["className", "style", "ref", "asChild"] },
   },
+  argTypes: {
+    onChange: { action: "onChange" },
+  },
 };
 
 export default meta;
