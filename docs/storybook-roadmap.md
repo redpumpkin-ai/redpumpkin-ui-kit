@@ -38,7 +38,7 @@ AI Notes
 - Implement a decorator that toggles `dark` class and applies padding so overlays are visible
 - Expose a toolbar item for theme switching via `globalTypes`
 
-## Phase 3 — Base Story Pattern
+## [x] Phase 3 — Base Story Pattern
 
 - Use `tags: ['autodocs']` for every story to enable props tables
 - Prefer `satisfies Meta<typeof Component>` for typed metadata
@@ -75,7 +75,7 @@ AI Notes
 - Always import the component from its sibling `./<name>` file, not from the library entry, to keep types precise
 - Auto-generate controls from TypeScript union types where possible; fall back to `argTypes` when needed
 
-## Phase 4 — Subcomponents and Composition
+## [x] Phase 4 — Subcomponents and Composition
 
 - Many modules export subcomponents (e.g., `Dialog`, `Sheet`, `DropdownMenu`, `Sidebar`)
 - Add `subcomponents` in `Meta` to surface their prop tables on the Docs page

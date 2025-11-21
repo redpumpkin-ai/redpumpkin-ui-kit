@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "./select";
 
-const meta: Meta<any> = {
+const meta = {
   title: "UI/Select",
   component: Select,
   tags: ["autodocs"],
   parameters: {
     controls: { exclude: ["className", "style", "ref", "asChild"] },
   },
-};
+} satisfies Meta<typeof Select>;
 
 export default meta;
 
