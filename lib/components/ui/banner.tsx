@@ -11,7 +11,7 @@ const bannerVariants = cva(
 				default: "bg-card text-card-foreground",
 				destructive:
 					"text-destructive bg-card [&:has([data-slot=banner-description])]:*::text-destructive/90",
-				info: "bg-blue-50 text-blue-900",
+				info: "bg-blue-50 border-blue-200 text-blue-900",
 				success: "bg-green-50 text-green-900",
 			},
 		},
@@ -37,7 +37,7 @@ function BannerTitle({ className, ...props }: React.ComponentProps<"div">) {
 	return (
 		<div
 			data-slot="banner-title"
-			className={cn("col-start-2 font-medium tracking-tight line-clamp-1", className)}
+			className={cn("col-start-2 text-lg font-medium tracking-normal", className)}
 			{...props}
 		/>
 	)

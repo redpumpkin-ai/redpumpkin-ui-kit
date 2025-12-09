@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { Banner, BannerTitle, BannerDescription, BannerActions, BannerIcon } from "./banner"
 import { Button } from "./button"
-import { PencilIcon } from "lucide-react"
+import { BadgeCentIcon, PencilIcon } from "lucide-react"
 
 const meta = {
   title: "UI/Banner",
@@ -20,9 +20,9 @@ type Story = StoryObj<typeof Banner>
 export const Default: Story = {
   render: () => (
     <Banner>
-       <BannerIcon><PencilIcon size={18}/></BannerIcon>
+       <BannerIcon><BadgeCentIcon size={18}/></BannerIcon>
       
-      <div>
+      <div className="gap-2">
         <BannerTitle>Helpful banner title</BannerTitle>
         <BannerDescription>
           This is a short description for the banner. Use it to inform users
@@ -35,7 +35,7 @@ export const Default: Story = {
 export const Info: Story = {
   render: () => (
     <Banner variant= "info">
-        <BannerIcon><PencilIcon size={18}/></BannerIcon>
+        <BannerIcon className="bg-white border-blue-300 text-color-blue-600 "><PencilIcon size={18}/></BannerIcon>
         
       <div>
         <BannerTitle>Helpful banner title</BannerTitle>
