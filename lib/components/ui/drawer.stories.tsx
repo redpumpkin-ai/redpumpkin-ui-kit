@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import userEvent from "@testing-library/user-event";
+import type { Meta, StoryObj } from '@storybook/react'
+import userEvent from '@testing-library/user-event'
 import {
   Drawer,
   DrawerClose,
@@ -9,11 +9,11 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "./drawer";
-import { Button } from "./button";
+} from './drawer'
+import { Button } from './button'
 
 const meta = {
-  title: "UI/Drawer",
+  title: 'UI/Drawer',
   component: Drawer,
   subcomponents: {
     DrawerClose,
@@ -24,23 +24,23 @@ const meta = {
     DrawerTitle,
     DrawerTrigger,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     open: false,
   },
   argTypes: {
-    onOpenChange: { action: "onOpenChange" },
+    onOpenChange: { action: 'onOpenChange' },
   },
   parameters: {
     controls: {
-      exclude: ["className", "style", "ref", "asChild"],
+      exclude: ['className', 'style', 'ref', 'asChild'],
     },
   },
-} satisfies Meta<typeof Drawer>;
+} satisfies Meta<typeof Drawer>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Drawer>;
+type Story = StoryObj<typeof Drawer>
 
 export const Default: Story = {
   render: (args) => (
@@ -66,11 +66,13 @@ export const Default: Story = {
     </Drawer>
   ),
   play: async ({ canvasElement }) => {
-    const buttons = Array.from(canvasElement.querySelectorAll("button"));
-    const trigger = buttons.find((b) => /open drawer/i.test(b.textContent || ""));
-    if (trigger) await userEvent.click(trigger);
+    const buttons = Array.from(canvasElement.querySelectorAll('button'))
+    const trigger = buttons.find((b) =>
+      /open drawer/i.test(b.textContent || '')
+    )
+    if (trigger) await userEvent.click(trigger)
   },
-};
+}
 
 export const Controlled: Story = {
   args: {
@@ -93,7 +95,7 @@ export const Controlled: Story = {
       </DrawerContent>
     </Drawer>
   ),
-};
+}
 
 export const Top: Story = {
   render: (args) => (
@@ -116,7 +118,7 @@ export const Top: Story = {
       </DrawerContent>
     </Drawer>
   ),
-};
+}
 
 export const Left: Story = {
   render: (args) => (
@@ -139,7 +141,7 @@ export const Left: Story = {
       </DrawerContent>
     </Drawer>
   ),
-};
+}
 
 export const Right: Story = {
   render: (args) => (
@@ -162,4 +164,4 @@ export const Right: Story = {
       </DrawerContent>
     </Drawer>
   ),
-};
+}

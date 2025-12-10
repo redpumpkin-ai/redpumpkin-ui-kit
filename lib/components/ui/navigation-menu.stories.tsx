@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import userEvent from "@testing-library/user-event";
+import type { Meta, StoryObj } from '@storybook/react'
+import userEvent from '@testing-library/user-event'
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -9,10 +9,10 @@ import {
   NavigationMenuLink,
   NavigationMenuIndicator,
   NavigationMenuViewport,
-} from "./navigation-menu";
+} from './navigation-menu'
 
 const meta = {
-  title: "UI/NavigationMenu",
+  title: 'UI/NavigationMenu',
   component: NavigationMenu,
   subcomponents: {
     NavigationMenuList,
@@ -23,15 +23,15 @@ const meta = {
     NavigationMenuIndicator,
     NavigationMenuViewport,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof NavigationMenu>;
+} satisfies Meta<typeof NavigationMenu>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof NavigationMenu>;
+type Story = StoryObj<typeof NavigationMenu>
 
 export const Default: Story = {
   render: () => (
@@ -43,19 +43,13 @@ export const Default: Story = {
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
                 <li>
-                  <NavigationMenuLink href="#">
-                    Introduction
-                  </NavigationMenuLink>
+                  <NavigationMenuLink href="#">Introduction</NavigationMenuLink>
                 </li>
                 <li>
-                  <NavigationMenuLink href="#">
-                    Installation
-                  </NavigationMenuLink>
+                  <NavigationMenuLink href="#">Installation</NavigationMenuLink>
                 </li>
                 <li>
-                  <NavigationMenuLink href="#">
-                    Usage
-                  </NavigationMenuLink>
+                  <NavigationMenuLink href="#">Usage</NavigationMenuLink>
                 </li>
               </ul>
             </NavigationMenuContent>
@@ -88,14 +82,14 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const triggers = Array.from(
       canvasElement.querySelectorAll('[data-slot="navigation-menu-trigger"]')
-    );
-    const first = triggers[0] as HTMLElement | undefined;
+    )
+    const first = triggers[0] as HTMLElement | undefined
     if (first) {
-      first.focus();
-      await userEvent.keyboard("{Enter}");
-      await userEvent.keyboard("{ArrowRight}");
-      await userEvent.keyboard("{ArrowLeft}");
-      await userEvent.keyboard("{Escape}");
+      first.focus()
+      await userEvent.keyboard('{Enter}')
+      await userEvent.keyboard('{ArrowRight}')
+      await userEvent.keyboard('{ArrowLeft}')
+      await userEvent.keyboard('{Escape}')
     }
   },
-};
+}

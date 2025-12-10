@@ -1,23 +1,28 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion";
+import type { Meta, StoryObj } from '@storybook/react'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from './accordion'
 
 const meta = {
-  title: "UI/Accordion",
+  title: 'UI/Accordion',
   component: Accordion,
   subcomponents: { AccordionItem, AccordionTrigger, AccordionContent },
-  tags: ["autodocs"],
-  args: { type: "single", collapsible: true },
+  tags: ['autodocs'],
+  args: { type: 'single', collapsible: true },
   argTypes: {
-    type: { control: { type: "radio" }, options: ["single", "multiple"] },
+    type: { control: { type: 'radio' }, options: ['single', 'multiple'] },
   },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof Accordion>;
+} satisfies Meta<typeof Accordion>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Accordion>;
+type Story = StoryObj<typeof Accordion>
 
 export const Default: Story = {
   render: (args) => (
@@ -32,4 +37,4 @@ export const Default: Story = {
       </AccordionItem>
     </Accordion>
   ),
-};
+}

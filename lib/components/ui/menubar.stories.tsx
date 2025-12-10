@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import userEvent from "@testing-library/user-event";
+import type { Meta, StoryObj } from '@storybook/react'
+import userEvent from '@testing-library/user-event'
 import {
   Menubar,
   MenubarMenu,
@@ -16,10 +16,10 @@ import {
   MenubarSub,
   MenubarSubTrigger,
   MenubarSubContent,
-} from "./menubar";
+} from './menubar'
 
 const meta = {
-  title: "UI/Menubar",
+  title: 'UI/Menubar',
   component: Menubar,
   subcomponents: {
     MenubarMenu,
@@ -37,15 +37,15 @@ const meta = {
     MenubarSubTrigger,
     MenubarSubContent,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof Menubar>;
+} satisfies Meta<typeof Menubar>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Menubar>;
+type Story = StoryObj<typeof Menubar>
 
 export const Default: Story = {
   render: () => (
@@ -84,14 +84,14 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const triggers = Array.from(
       canvasElement.querySelectorAll('[data-slot="menubar-trigger"]')
-    );
-    const first = triggers[0] as HTMLElement | undefined;
+    )
+    const first = triggers[0] as HTMLElement | undefined
     if (first) {
-      first.focus();
-      await userEvent.keyboard("{Enter}");
-      await userEvent.keyboard("{ArrowDown}");
-      await userEvent.keyboard("{ArrowRight}");
-      await userEvent.keyboard("{Escape}");
+      first.focus()
+      await userEvent.keyboard('{Enter}')
+      await userEvent.keyboard('{ArrowDown}')
+      await userEvent.keyboard('{ArrowRight}')
+      await userEvent.keyboard('{Escape}')
     }
   },
-};
+}

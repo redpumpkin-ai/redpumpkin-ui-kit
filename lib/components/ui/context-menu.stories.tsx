@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import userEvent from "@testing-library/user-event";
+import type { Meta, StoryObj } from '@storybook/react'
+import userEvent from '@testing-library/user-event'
 import {
   ContextMenu,
   ContextMenuTrigger,
@@ -16,10 +16,10 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuRadioGroup,
-} from "./context-menu";
+} from './context-menu'
 
 const meta = {
-  title: "UI/ContextMenu",
+  title: 'UI/ContextMenu',
   component: ContextMenu,
   subcomponents: {
     ContextMenuTrigger,
@@ -37,15 +37,15 @@ const meta = {
     ContextMenuSubTrigger,
     ContextMenuRadioGroup,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof ContextMenu>;
+} satisfies Meta<typeof ContextMenu>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof ContextMenu>;
+type Story = StoryObj<typeof ContextMenu>
 
 export const Default: Story = {
   render: () => (
@@ -53,14 +53,16 @@ export const Default: Story = {
       <ContextMenuTrigger>
         <div
           data-testid="context-area"
-          className="flex h-32 w-full items-center justify-center rounded-md border bg-muted/30 text-sm"
+          className="bg-muted/30 flex h-32 w-full items-center justify-center rounded-md border text-sm"
         >
           Right click here
         </div>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuItem inset>Back</ContextMenuItem>
-        <ContextMenuItem inset disabled>Forward</ContextMenuItem>
+        <ContextMenuItem inset disabled>
+          Forward
+        </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuSub>
           <ContextMenuSubTrigger inset>Share</ContextMenuSubTrigger>
@@ -81,9 +83,11 @@ export const Default: Story = {
     </ContextMenu>
   ),
   play: async ({ canvasElement }) => {
-    const area = canvasElement.querySelector('[data-testid="context-area"]') as HTMLElement | null;
+    const area = canvasElement.querySelector(
+      '[data-testid="context-area"]'
+    ) as HTMLElement | null
     if (area) {
-      await userEvent.pointer({ keys: "[MouseRight]", target: area });
+      await userEvent.pointer({ keys: '[MouseRight]', target: area })
     }
   },
-};
+}

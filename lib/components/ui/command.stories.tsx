@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react'
 import {
   CommandDialog,
   CommandInput,
@@ -8,10 +8,10 @@ import {
   CommandItem,
   CommandShortcut,
   CommandSeparator,
-} from "./command";
+} from './command'
 
 const meta = {
-  title: "UI/Command",
+  title: 'UI/Command',
   component: CommandDialog,
   subcomponents: {
     CommandInput,
@@ -22,21 +22,21 @@ const meta = {
     CommandShortcut,
     CommandSeparator,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     open: true,
   },
   argTypes: {
-    onOpenChange: { action: "onOpenChange" },
+    onOpenChange: { action: 'onOpenChange' },
   },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof CommandDialog>;
+} satisfies Meta<typeof CommandDialog>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof CommandDialog>;
+type Story = StoryObj<typeof CommandDialog>
 
 export const Default: Story = {
   render: (args) => (
@@ -63,4 +63,4 @@ export const Default: Story = {
       </CommandList>
     </CommandDialog>
   ),
-};
+}

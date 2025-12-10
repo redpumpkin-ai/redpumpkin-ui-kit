@@ -1,19 +1,34 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis } from "./pagination";
+import type { Meta, StoryObj } from '@storybook/react'
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from './pagination'
 
 const meta: Meta<typeof Pagination> = {
-  title: "UI/Pagination",
+  title: 'UI/Pagination',
   component: Pagination,
-  subcomponents: { PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis },
-  tags: ["autodocs"],
-  parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+  subcomponents: {
+    PaginationContent,
+    PaginationItem,
+    PaginationLink,
+    PaginationPrevious,
+    PaginationNext,
+    PaginationEllipsis,
   },
-};
+  tags: ['autodocs'],
+  parameters: {
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
+  },
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Pagination>;
+type Story = StoryObj<typeof Pagination>
 
 export const Default: Story = {
   render: () => (
@@ -42,4 +57,4 @@ export const Default: Story = {
       </PaginationContent>
     </Pagination>
   ),
-};
+}

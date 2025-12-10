@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Textarea } from "./textarea";
+import type { Meta, StoryObj } from '@storybook/react'
+import { Textarea } from './textarea'
 
 const meta: Meta<typeof Textarea> = {
-  title: "UI/Textarea",
+  title: 'UI/Textarea',
   component: Textarea,
-  tags: ["autodocs"],
-  args: { placeholder: "Write a message" },
+  tags: ['autodocs'],
+  args: { placeholder: 'Write a message' },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
   argTypes: {
-    onChange: { action: "onChange" },
+    onChange: { action: 'onChange' },
   },
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Textarea>;
+type Story = StoryObj<typeof Textarea>
 
-export const Default: Story = {};
+export const Default: Story = {}

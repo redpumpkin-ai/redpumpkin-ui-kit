@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Spinner } from "./spinner";
+import type { Meta, StoryObj } from '@storybook/react'
+import { Spinner } from './spinner'
 
 const meta: Meta<typeof Spinner> = {
-  title: "UI/Spinner",
+  title: 'UI/Spinner',
   component: Spinner,
-  tags: ["autodocs"],
-  args: { className: "size-6" },
+  tags: ['autodocs'],
+  args: { className: 'size-6' },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Spinner>;
+type Story = StoryObj<typeof Spinner>
 
-export const Default: Story = {};
+export const Default: Story = {}

@@ -1,36 +1,32 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import userEvent from "@testing-library/user-event";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "./tooltip";
-import { Button } from "./button";
+import type { Meta, StoryObj } from '@storybook/react'
+import userEvent from '@testing-library/user-event'
+import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
+import { Button } from './button'
 
 const meta = {
-  title: "UI/Tooltip",
+  title: 'UI/Tooltip',
   component: Tooltip,
   subcomponents: {
     TooltipContent,
     TooltipTrigger,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     open: false,
   },
   argTypes: {
-    onOpenChange: { action: "onOpenChange" },
+    onOpenChange: { action: 'onOpenChange' },
   },
   parameters: {
     controls: {
-      exclude: ["className", "style", "ref", "asChild"],
+      exclude: ['className', 'style', 'ref', 'asChild'],
     },
   },
-} satisfies Meta<typeof Tooltip>;
+} satisfies Meta<typeof Tooltip>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Tooltip>;
+type Story = StoryObj<typeof Tooltip>
 
 export const Default: Story = {
   render: (args) => (
@@ -44,11 +40,11 @@ export const Default: Story = {
     </Tooltip>
   ),
   play: async ({ canvasElement }) => {
-    const buttons = Array.from(canvasElement.querySelectorAll("button"));
-    const trigger = buttons.find((b) => /hover me/i.test(b.textContent || ""));
-    if (trigger) await userEvent.hover(trigger);
+    const buttons = Array.from(canvasElement.querySelectorAll('button'))
+    const trigger = buttons.find((b) => /hover me/i.test(b.textContent || ''))
+    if (trigger) await userEvent.hover(trigger)
   },
-};
+}
 
 export const Controlled: Story = {
   args: {
@@ -60,15 +56,17 @@ export const Controlled: Story = {
         <Button variant="outline">Anchor</Button>
       </TooltipTrigger>
       <TooltipContent>
-        <p>This tooltip is controlled with the open prop set to true by default.</p>
+        <p>
+          This tooltip is controlled with the open prop set to true by default.
+        </p>
       </TooltipContent>
     </Tooltip>
   ),
-};
+}
 
 export const DifferentPositions: Story = {
   render: () => (
-    <div className="flex gap-4 flex-wrap">
+    <div className="flex flex-wrap gap-4">
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline">Top</Button>
@@ -77,7 +75,7 @@ export const DifferentPositions: Story = {
           <p>Tooltip on top</p>
         </TooltipContent>
       </Tooltip>
-      
+
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline">Right</Button>
@@ -86,7 +84,7 @@ export const DifferentPositions: Story = {
           <p>Tooltip on right</p>
         </TooltipContent>
       </Tooltip>
-      
+
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline">Bottom</Button>
@@ -95,7 +93,7 @@ export const DifferentPositions: Story = {
           <p>Tooltip on bottom</p>
         </TooltipContent>
       </Tooltip>
-      
+
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline">Left</Button>
@@ -106,7 +104,7 @@ export const DifferentPositions: Story = {
       </Tooltip>
     </div>
   ),
-};
+}
 
 export const WithIcon: Story = {
   render: (args) => (
@@ -121,7 +119,7 @@ export const WithIcon: Story = {
       </TooltipContent>
     </Tooltip>
   ),
-};
+}
 
 export const LongContent: Story = {
   render: (args) => (
@@ -130,8 +128,11 @@ export const LongContent: Story = {
         <Button variant="outline">Long tooltip</Button>
       </TooltipTrigger>
       <TooltipContent className="max-w-xs">
-        <p>This is a longer tooltip with more detailed information about the feature or functionality you're hovering over.</p>
+        <p>
+          This is a longer tooltip with more detailed information about the
+          feature or functionality you're hovering over.
+        </p>
       </TooltipContent>
     </Tooltip>
   ),
-};
+}

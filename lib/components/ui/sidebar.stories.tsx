@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react'
 import {
   Sidebar,
   SidebarProvider,
@@ -21,10 +21,10 @@ import {
   SidebarMenuSubItem,
   SidebarMenuSubButton,
   SidebarInput,
-} from "./sidebar";
+} from './sidebar'
 
 const meta = {
-  title: "UI/Sidebar",
+  title: 'UI/Sidebar',
   component: Sidebar,
   subcomponents: {
     SidebarProvider,
@@ -48,89 +48,93 @@ const meta = {
     SidebarMenuSubButton,
     SidebarInput,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
-    side: "left",
-    variant: "sidebar",
-    collapsible: "offcanvas",
+    side: 'left',
+    variant: 'sidebar',
+    collapsible: 'offcanvas',
   },
   argTypes: {
-    side: { control: { type: "radio" }, options: ["left", "right"] },
+    side: { control: { type: 'radio' }, options: ['left', 'right'] },
     variant: {
-      control: { type: "radio" },
-      options: ["sidebar", "floating", "inset"],
+      control: { type: 'radio' },
+      options: ['sidebar', 'floating', 'inset'],
     },
     collapsible: {
-      control: { type: "radio" },
-      options: ["offcanvas", "icon", "none"],
+      control: { type: 'radio' },
+      options: ['offcanvas', 'icon', 'none'],
     },
   },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof Sidebar>;
+} satisfies Meta<typeof Sidebar>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Sidebar>;
+type Story = StoryObj<typeof Sidebar>
 type SidebarStoryArgs = React.ComponentProps<typeof Sidebar> & {
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
-};
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+}
 
 export const Default: Story = {
   render: (args: SidebarStoryArgs) => {
-    const { open, onOpenChange, ...rest } = args;
+    const { open, onOpenChange, ...rest } = args
     return (
       <SidebarProvider open={open} onOpenChange={onOpenChange}>
         <Sidebar {...rest}>
-        <SidebarHeader>
-          <SidebarInput placeholder="Search" />
-        </SidebarHeader>
-        <SidebarContent>
-          <SidebarGroup>
-            <SidebarGroupLabel>General</SidebarGroupLabel>
-            <SidebarGroupAction aria-label="Add" />
-            <SidebarGroupContent>
-              <SidebarMenu>
-                <SidebarMenuItem>
-                  <SidebarMenuButton tooltip="Home">Home</SidebarMenuButton>
-                  <SidebarMenuAction aria-label="Pin" />
-                  <SidebarMenuBadge>3</SidebarMenuBadge>
-                </SidebarMenuItem>
-                <SidebarMenuItem>
-                  <SidebarMenuButton tooltip="Projects">Projects</SidebarMenuButton>
-                </SidebarMenuItem>
-                <SidebarMenuItem>
-                  <SidebarMenuButton tooltip="Settings">Settings</SidebarMenuButton>
-                </SidebarMenuItem>
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-          <SidebarSeparator />
-          <SidebarGroup>
-            <SidebarGroupLabel>Shortcuts</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                <SidebarMenuItem>
-                  <SidebarMenuButton isActive>Overview</SidebarMenuButton>
-                </SidebarMenuItem>
-                <SidebarMenuItem>
-                  <SidebarMenuButton>Activity</SidebarMenuButton>
-                  <SidebarMenuSub>
-                    <SidebarMenuSubItem>
-                      <SidebarMenuSubButton>Today</SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                    <SidebarMenuSubItem>
-                      <SidebarMenuSubButton>Week</SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  </SidebarMenuSub>
-                </SidebarMenuItem>
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        </SidebarContent>
-        <SidebarFooter></SidebarFooter>
+          <SidebarHeader>
+            <SidebarInput placeholder="Search" />
+          </SidebarHeader>
+          <SidebarContent>
+            <SidebarGroup>
+              <SidebarGroupLabel>General</SidebarGroupLabel>
+              <SidebarGroupAction aria-label="Add" />
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton tooltip="Home">Home</SidebarMenuButton>
+                    <SidebarMenuAction aria-label="Pin" />
+                    <SidebarMenuBadge>3</SidebarMenuBadge>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton tooltip="Projects">
+                      Projects
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton tooltip="Settings">
+                      Settings
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+            <SidebarSeparator />
+            <SidebarGroup>
+              <SidebarGroupLabel>Shortcuts</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton isActive>Overview</SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton>Activity</SidebarMenuButton>
+                    <SidebarMenuSub>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>Today</SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>Week</SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    </SidebarMenuSub>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </SidebarContent>
+          <SidebarFooter></SidebarFooter>
         </Sidebar>
         <SidebarInset>
           <div className="flex h-12 items-center gap-2 border-b px-2">
@@ -140,6 +144,6 @@ export const Default: Story = {
           <div className="p-4 text-sm">Content area</div>
         </SidebarInset>
       </SidebarProvider>
-    );
+    )
   },
-};
+}

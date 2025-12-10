@@ -1,23 +1,27 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "./collapsible";
+import type { Meta, StoryObj } from '@storybook/react'
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from './collapsible'
 
 const meta = {
-  title: "UI/Collapsible",
+  title: 'UI/Collapsible',
   component: Collapsible,
   subcomponents: { CollapsibleTrigger, CollapsibleContent },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: { open: true },
   argTypes: {
-    onOpenChange: { action: "onOpenChange" },
+    onOpenChange: { action: 'onOpenChange' },
   },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof Collapsible>;
+} satisfies Meta<typeof Collapsible>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Collapsible>;
+type Story = StoryObj<typeof Collapsible>
 
 export const Default: Story = {
   render: (args) => (
@@ -26,4 +30,4 @@ export const Default: Story = {
       <CollapsibleContent>Content</CollapsibleContent>
     </Collapsible>
   ),
-};
+}

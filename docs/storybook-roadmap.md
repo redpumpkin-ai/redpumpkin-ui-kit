@@ -49,25 +49,25 @@ AI Notes
 Example Template
 
 ```ts
-import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./button";
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from './button'
 
 const meta = {
-  title: "UI/Button",
+  title: 'UI/Button',
   component: Button,
-  tags: ["autodocs"],
-  args: { children: "Button" },
+  tags: ['autodocs'],
+  args: { children: 'Button' },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Button>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Button>
 
-export const Default: Story = {};
-export const Destructive: Story = { args: { variant: "destructive" } };
+export const Default: Story = {}
+export const Destructive: Story = { args: { variant: 'destructive' } }
 ```
 
 AI Notes
@@ -149,8 +149,8 @@ AI Notes
 Example: Form
 
 ```ts
-import type { Meta, StoryObj } from "@storybook/react";
-import { Form } from "./form";
+import type { Meta, StoryObj } from '@storybook/react'
+import { Form } from './form'
 // Render a small form using RHF; show submit handling
 ```
 

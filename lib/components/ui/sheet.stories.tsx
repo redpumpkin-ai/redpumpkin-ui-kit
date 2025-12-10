@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import userEvent from "@testing-library/user-event";
+import type { Meta, StoryObj } from '@storybook/react'
+import userEvent from '@testing-library/user-event'
 import {
   Sheet,
   SheetClose,
@@ -9,11 +9,11 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./sheet";
-import { Button } from "./button";
+} from './sheet'
+import { Button } from './button'
 
 const meta = {
-  title: "UI/Sheet",
+  title: 'UI/Sheet',
   component: Sheet,
   subcomponents: {
     SheetClose,
@@ -24,23 +24,23 @@ const meta = {
     SheetTitle,
     SheetTrigger,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     open: false,
   },
   argTypes: {
-    onOpenChange: { action: "onOpenChange" },
+    onOpenChange: { action: 'onOpenChange' },
   },
   parameters: {
     controls: {
-      exclude: ["className", "style", "ref", "asChild"],
+      exclude: ['className', 'style', 'ref', 'asChild'],
     },
   },
-} satisfies Meta<typeof Sheet>;
+} satisfies Meta<typeof Sheet>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Sheet>;
+type Story = StoryObj<typeof Sheet>
 
 export const Default: Story = {
   render: (args) => (
@@ -63,7 +63,7 @@ export const Default: Story = {
             <input
               id="name"
               defaultValue="Pedro Duarte"
-              className="col-span-3 border rounded px-3 py-2 text-sm"
+              className="col-span-3 rounded border px-3 py-2 text-sm"
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
@@ -73,7 +73,7 @@ export const Default: Story = {
             <input
               id="username"
               defaultValue="@peduarte"
-              className="col-span-3 border rounded px-3 py-2 text-sm"
+              className="col-span-3 rounded border px-3 py-2 text-sm"
             />
           </div>
         </div>
@@ -86,11 +86,11 @@ export const Default: Story = {
     </Sheet>
   ),
   play: async ({ canvasElement }) => {
-    const buttons = Array.from(canvasElement.querySelectorAll("button"));
-    const trigger = buttons.find((b) => /open sheet/i.test(b.textContent || ""));
-    if (trigger) await userEvent.click(trigger);
+    const buttons = Array.from(canvasElement.querySelectorAll('button'))
+    const trigger = buttons.find((b) => /open sheet/i.test(b.textContent || ''))
+    if (trigger) await userEvent.click(trigger)
   },
-};
+}
 
 export const Controlled: Story = {
   args: {
@@ -113,7 +113,7 @@ export const Controlled: Story = {
       </SheetContent>
     </Sheet>
   ),
-};
+}
 
 export const Top: Story = {
   render: (args) => (
@@ -136,7 +136,7 @@ export const Top: Story = {
       </SheetContent>
     </Sheet>
   ),
-};
+}
 
 export const Left: Story = {
   render: (args) => (
@@ -159,7 +159,7 @@ export const Left: Story = {
       </SheetContent>
     </Sheet>
   ),
-};
+}
 
 export const Bottom: Story = {
   render: (args) => (
@@ -182,4 +182,4 @@ export const Bottom: Story = {
       </SheetContent>
     </Sheet>
   ),
-};
+}

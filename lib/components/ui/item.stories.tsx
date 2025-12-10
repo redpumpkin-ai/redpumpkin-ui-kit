@@ -1,18 +1,39 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { Item, ItemMedia, ItemContent, ItemActions, ItemGroup, ItemSeparator, ItemTitle, ItemDescription, ItemHeader, ItemFooter } from "./item"
+import type { Meta, StoryObj } from '@storybook/react'
+import {
+  Item,
+  ItemMedia,
+  ItemContent,
+  ItemActions,
+  ItemGroup,
+  ItemSeparator,
+  ItemTitle,
+  ItemDescription,
+  ItemHeader,
+  ItemFooter,
+} from './item'
 
 const meta = {
-  title: "UI/Item",
+  title: 'UI/Item',
   component: Item,
-  subcomponents: { ItemMedia, ItemContent, ItemActions, ItemGroup, ItemSeparator, ItemTitle, ItemDescription, ItemHeader, ItemFooter },
-  tags: ["autodocs"],
-  parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+  subcomponents: {
+    ItemMedia,
+    ItemContent,
+    ItemActions,
+    ItemGroup,
+    ItemSeparator,
+    ItemTitle,
+    ItemDescription,
+    ItemHeader,
+    ItemFooter,
   },
-} satisfies Meta<typeof Item>;
+  tags: ['autodocs'],
+  parameters: {
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
+  },
+} satisfies Meta<typeof Item>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Item>;
+type Story = StoryObj<typeof Item>
 
-export const Default: Story = {};
+export const Default: Story = {}

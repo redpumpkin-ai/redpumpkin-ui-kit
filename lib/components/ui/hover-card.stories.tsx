@@ -1,37 +1,33 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import userEvent from "@testing-library/user-event";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "./hover-card";
-import { Button } from "./button";
-import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
+import type { Meta, StoryObj } from '@storybook/react'
+import userEvent from '@testing-library/user-event'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from './hover-card'
+import { Button } from './button'
+import { Avatar, AvatarFallback, AvatarImage } from './avatar'
 
 const meta = {
-  title: "UI/HoverCard",
+  title: 'UI/HoverCard',
   component: HoverCard,
   subcomponents: {
     HoverCardContent,
     HoverCardTrigger,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     open: false,
   },
   argTypes: {
-    onOpenChange: { action: "onOpenChange" },
+    onOpenChange: { action: 'onOpenChange' },
   },
   parameters: {
     controls: {
-      exclude: ["className", "style", "ref", "asChild"],
+      exclude: ['className', 'style', 'ref', 'asChild'],
     },
   },
-} satisfies Meta<typeof HoverCard>;
+} satisfies Meta<typeof HoverCard>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof HoverCard>;
+type Story = StoryObj<typeof HoverCard>
 
 export const Default: Story = {
   render: (args) => (
@@ -49,7 +45,7 @@ export const Default: Story = {
             <h4 className="text-sm font-semibold">@nextjs</h4>
             <p className="text-sm">The React Framework for the Web</p>
             <div className="flex items-center pt-2">
-              <span className="text-xs text-muted-foreground">
+              <span className="text-muted-foreground text-xs">
                 Joined December 2021
               </span>
             </div>
@@ -59,11 +55,11 @@ export const Default: Story = {
     </HoverCard>
   ),
   play: async ({ canvasElement }) => {
-    const buttons = Array.from(canvasElement.querySelectorAll("button"));
-    const trigger = buttons.find((b) => /@nextjs/i.test(b.textContent || ""));
-    if (trigger) await userEvent.hover(trigger);
+    const buttons = Array.from(canvasElement.querySelectorAll('button'))
+    const trigger = buttons.find((b) => /@nextjs/i.test(b.textContent || ''))
+    if (trigger) await userEvent.hover(trigger)
   },
-};
+}
 
 export const Controlled: Story = {
   args: {
@@ -84,13 +80,13 @@ export const Controlled: Story = {
       </HoverCardContent>
     </HoverCard>
   ),
-};
+}
 
 export const UserProfile: Story = {
   render: (args) => (
     <HoverCard {...args}>
       <HoverCardTrigger asChild>
-        <Button variant="ghost" className="p-0 h-auto">
+        <Button variant="ghost" className="h-auto p-0">
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
@@ -105,9 +101,9 @@ export const UserProfile: Story = {
           </Avatar>
           <div className="space-y-1">
             <h4 className="text-sm font-semibold">shadcn</h4>
-            <p className="text-sm text-muted-foreground">Software Engineer</p>
+            <p className="text-muted-foreground text-sm">Software Engineer</p>
             <div className="flex items-center pt-2">
-              <span className="text-xs text-muted-foreground">
+              <span className="text-muted-foreground text-xs">
                 1.2k followers • 42 following
               </span>
             </div>
@@ -124,7 +120,7 @@ export const UserProfile: Story = {
       </HoverCardContent>
     </HoverCard>
   ),
-};
+}
 
 export const ProductCard: Story = {
   render: (args) => (
@@ -134,12 +130,12 @@ export const ProductCard: Story = {
       </HoverCardTrigger>
       <HoverCardContent className="w-80">
         <div className="space-y-3">
-          <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+          <div className="bg-muted flex aspect-video items-center justify-center rounded-lg">
             <span className="text-muted-foreground text-sm">Product Image</span>
           </div>
           <div>
             <h4 className="text-sm font-semibold">Premium Headphones</h4>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               High-quality wireless headphones with noise cancellation
             </p>
           </div>
@@ -151,4 +147,4 @@ export const ProductCard: Story = {
       </HoverCardContent>
     </HoverCard>
   ),
-};
+}

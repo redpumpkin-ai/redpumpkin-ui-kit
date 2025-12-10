@@ -1,11 +1,26 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction } from "./card";
+import type { Meta, StoryObj } from '@storybook/react'
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+  CardAction,
+} from './card'
 
 const meta: Meta<typeof Card> = {
-  title: "UI/Card",
+  title: 'UI/Card',
   component: Card,
-  subcomponents: { CardHeader, CardFooter, CardTitle, CardAction, CardDescription, CardContent },
-  tags: ["autodocs"],
+  subcomponents: {
+    CardHeader,
+    CardFooter,
+    CardTitle,
+    CardAction,
+    CardDescription,
+    CardContent,
+  },
+  tags: ['autodocs'],
   args: {
     children: (
       <>
@@ -19,12 +34,12 @@ const meta: Meta<typeof Card> = {
     ),
   },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Card>;
+type Story = StoryObj<typeof Card>
 
-export const Default: Story = {};
+export const Default: Story = {}

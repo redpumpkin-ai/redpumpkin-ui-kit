@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react'
 import {
   ChartContainer,
   ChartLegend,
@@ -6,41 +6,46 @@ import {
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
-} from "./chart";
-import { LineChart, CartesianGrid, XAxis, YAxis, Line } from "recharts";
+} from './chart'
+import { LineChart, CartesianGrid, XAxis, YAxis, Line } from 'recharts'
 
 const meta: Meta<typeof ChartContainer> = {
-  title: "UI/Chart",
+  title: 'UI/Chart',
   component: ChartContainer,
-  subcomponents: { ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent },
-  tags: ["autodocs"],
+  subcomponents: {
+    ChartLegend,
+    ChartLegendContent,
+    ChartTooltip,
+    ChartTooltipContent,
+  },
+  tags: ['autodocs'],
   args: {
     config: {
-      desktop: { label: "Desktop", color: "var(--chart-1)" },
-      mobile: { label: "Mobile", color: "var(--chart-2)" },
+      desktop: { label: 'Desktop', color: 'var(--chart-1)' },
+      mobile: { label: 'Mobile', color: 'var(--chart-2)' },
     } satisfies ChartConfig,
-    className: "",
+    className: '',
   },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof ChartContainer>;
+type Story = StoryObj<typeof ChartContainer>
 
 export const Basic: Story = {
   render: (args) => (
     <ChartContainer {...args}>
       <LineChart
         data={[
-          { month: "Jan", desktop: 186, mobile: 80 },
-          { month: "Feb", desktop: 305, mobile: 200 },
-          { month: "Mar", desktop: 237, mobile: 120 },
-          { month: "Apr", desktop: 73, mobile: 90 },
-          { month: "May", desktop: 209, mobile: 130 },
-          { month: "Jun", desktop: 214, mobile: 150 },
+          { month: 'Jan', desktop: 186, mobile: 80 },
+          { month: 'Feb', desktop: 305, mobile: 200 },
+          { month: 'Mar', desktop: 237, mobile: 120 },
+          { month: 'Apr', desktop: 73, mobile: 90 },
+          { month: 'May', desktop: 209, mobile: 130 },
+          { month: 'Jun', desktop: 214, mobile: 150 },
         ]}
       >
         <CartesianGrid strokeDasharray="3 3" />
@@ -65,4 +70,4 @@ export const Basic: Story = {
       </LineChart>
     </ChartContainer>
   ),
-};
+}

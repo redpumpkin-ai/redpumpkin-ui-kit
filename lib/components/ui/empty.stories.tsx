@@ -1,21 +1,34 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { InboxIcon } from "lucide-react";
-import { Button } from "./button";
-import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia } from "./empty";
+import type { Meta, StoryObj } from '@storybook/react'
+import { InboxIcon } from 'lucide-react'
+import { Button } from './button'
+import {
+  Empty,
+  EmptyHeader,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+  EmptyMedia,
+} from './empty'
 
 const meta = {
-  title: "UI/Empty",
+  title: 'UI/Empty',
   component: Empty,
-  subcomponents: { EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia },
-  tags: ["autodocs"],
-  parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+  subcomponents: {
+    EmptyHeader,
+    EmptyTitle,
+    EmptyDescription,
+    EmptyContent,
+    EmptyMedia,
   },
-} satisfies Meta<typeof Empty>;
+  tags: ['autodocs'],
+  parameters: {
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
+  },
+} satisfies Meta<typeof Empty>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Empty>;
+type Story = StoryObj<typeof Empty>
 
 export const Default: Story = {
   render: () => (
@@ -32,4 +45,4 @@ export const Default: Story = {
       </EmptyContent>
     </Empty>
   ),
-};
+}

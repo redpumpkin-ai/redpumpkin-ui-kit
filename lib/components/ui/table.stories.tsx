@@ -1,19 +1,36 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption } from "./table";
+import type { Meta, StoryObj } from '@storybook/react'
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
+} from './table'
 
 const meta: Meta<typeof Table> = {
-  title: "UI/Table",
+  title: 'UI/Table',
   component: Table,
-  subcomponents: { TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption },
-  tags: ["autodocs"],
-  parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+  subcomponents: {
+    TableHeader,
+    TableBody,
+    TableFooter,
+    TableHead,
+    TableRow,
+    TableCell,
+    TableCaption,
   },
-};
+  tags: ['autodocs'],
+  parameters: {
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
+  },
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Table>;
+type Story = StoryObj<typeof Table>
 
 export const Default: Story = {
   render: () => (
@@ -51,4 +68,4 @@ export const Default: Story = {
       </TableFooter>
     </Table>
   ),
-};
+}

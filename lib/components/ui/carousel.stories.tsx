@@ -1,18 +1,29 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "./carousel"
+import type { Meta, StoryObj } from '@storybook/react'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from './carousel'
 
 const meta = {
-  title: "UI/Carousel",
+  title: 'UI/Carousel',
   component: Carousel,
-  subcomponents: { CarouselContent, CarouselItem, CarouselPrevious, CarouselNext },
-  tags: ["autodocs"],
-  parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+  subcomponents: {
+    CarouselContent,
+    CarouselItem,
+    CarouselPrevious,
+    CarouselNext,
   },
-} satisfies Meta<typeof Carousel>;
+  tags: ['autodocs'],
+  parameters: {
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
+  },
+} satisfies Meta<typeof Carousel>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Carousel>;
+type Story = StoryObj<typeof Carousel>
 
-export const Default: Story = {};
+export const Default: Story = {}

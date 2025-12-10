@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import userEvent from "@testing-library/user-event";
+import type { Meta, StoryObj } from '@storybook/react'
+import userEvent from '@testing-library/user-event'
 import {
   Dialog,
   DialogClose,
@@ -9,11 +9,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./dialog";
-import { Button } from "./button";
+} from './dialog'
+import { Button } from './button'
 
 const meta = {
-  title: "UI/Dialog",
+  title: 'UI/Dialog',
   component: Dialog,
   subcomponents: {
     DialogClose,
@@ -24,23 +24,23 @@ const meta = {
     DialogTitle,
     DialogTrigger,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     open: false,
   },
   argTypes: {
-    onOpenChange: { action: "onOpenChange" },
+    onOpenChange: { action: 'onOpenChange' },
   },
   parameters: {
     controls: {
-      exclude: ["className", "style", "ref", "asChild"],
+      exclude: ['className', 'style', 'ref', 'asChild'],
     },
   },
-} satisfies Meta<typeof Dialog>;
+} satisfies Meta<typeof Dialog>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Dialog>;
+type Story = StoryObj<typeof Dialog>
 
 export const Default: Story = {
   render: (args) => (
@@ -66,11 +66,13 @@ export const Default: Story = {
     </Dialog>
   ),
   play: async ({ canvasElement }) => {
-    const buttons = Array.from(canvasElement.querySelectorAll("button"));
-    const trigger = buttons.find((b) => /open dialog/i.test(b.textContent || ""));
-    if (trigger) await userEvent.click(trigger);
+    const buttons = Array.from(canvasElement.querySelectorAll('button'))
+    const trigger = buttons.find((b) =>
+      /open dialog/i.test(b.textContent || '')
+    )
+    if (trigger) await userEvent.click(trigger)
   },
-};
+}
 
 export const Controlled: Story = {
   args: {
@@ -93,7 +95,7 @@ export const Controlled: Story = {
       </DialogContent>
     </Dialog>
   ),
-};
+}
 
 export const WithCustomContent: Story = {
   render: (args) => (
@@ -116,7 +118,7 @@ export const WithCustomContent: Story = {
             <input
               id="name"
               defaultValue="Pedro Duarte"
-              className="col-span-3 border rounded px-3 py-2 text-sm"
+              className="col-span-3 rounded border px-3 py-2 text-sm"
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
@@ -126,7 +128,7 @@ export const WithCustomContent: Story = {
             <input
               id="username"
               defaultValue="@peduarte"
-              className="col-span-3 border rounded px-3 py-2 text-sm"
+              className="col-span-3 rounded border px-3 py-2 text-sm"
             />
           </div>
         </div>
@@ -136,7 +138,7 @@ export const WithCustomContent: Story = {
       </DialogContent>
     </Dialog>
   ),
-};
+}
 
 export const WithoutCloseButton: Story = {
   render: (args) => (
@@ -148,8 +150,8 @@ export const WithoutCloseButton: Story = {
         <DialogHeader>
           <DialogTitle>Dialog without close button</DialogTitle>
           <DialogDescription>
-            This dialog doesn't have a close button. You can close it by clicking
-            outside or pressing the Escape key.
+            This dialog doesn't have a close button. You can close it by
+            clicking outside or pressing the Escape key.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
@@ -160,4 +162,4 @@ export const WithoutCloseButton: Story = {
       </DialogContent>
     </Dialog>
   ),
-};
+}

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react'
 import {
   FieldSet,
   FieldLegend,
@@ -10,12 +10,12 @@ import {
   FieldSeparator,
   FieldError,
   FieldTitle,
-} from "./field";
-import { Input } from "./input";
-import { Textarea } from "./textarea";
+} from './field'
+import { Input } from './input'
+import { Textarea } from './textarea'
 
 const meta = {
-  title: "UI/Field",
+  title: 'UI/Field',
   component: FieldSet,
   subcomponents: {
     FieldLegend,
@@ -28,15 +28,15 @@ const meta = {
     FieldError,
     FieldTitle,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof FieldSet>;
+} satisfies Meta<typeof FieldSet>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof FieldSet>;
+type Story = StoryObj<typeof FieldSet>
 
 export const Default: Story = {
   render: () => (
@@ -74,4 +74,4 @@ export const Default: Story = {
       </FieldGroup>
     </FieldSet>
   ),
-};
+}

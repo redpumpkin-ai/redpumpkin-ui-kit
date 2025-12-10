@@ -1,8 +1,8 @@
-import fs from "fs"
-import path from "path"
+import fs from 'fs'
+import path from 'path'
 
 function read(file) {
-  return fs.readFileSync(file, "utf8")
+  return fs.readFileSync(file, 'utf8')
 }
 
 function fail(msg) {
@@ -26,12 +26,12 @@ function extractExportsFromModule(modulePath) {
   while ((m = re.exec(src))) {
     const inner = m[1]
     inner
-      .split(",")
+      .split(',')
       .map((s) => s.trim())
       .forEach((token) => {
         if (!token) return
         if (/^type\s+/i.test(token)) return
-        const cleaned = token.replace(/\s+as\s+.*/i, "")
+        const cleaned = token.replace(/\s+as\s+.*/i, '')
         if (/^[A-Z]/.test(cleaned)) names.push(cleaned)
       })
   }
@@ -39,7 +39,10 @@ function extractExportsFromModule(modulePath) {
 }
 
 function checkAutodocsTag(storySource) {
-  return /tags:\s*\[([^\]]*?)\]/.test(storySource) && /['"]autodocs['"]/i.test(storySource)
+  return (
+    /tags:\s*\[([^\]]*?)\]/.test(storySource) &&
+    /['"]autodocs['"]/i.test(storySource)
+  )
 }
 
 function checkControlledOpen(storySource) {
@@ -52,17 +55,17 @@ function hasSubcomponents(storySource) {
 
 function run() {
   const root = process.cwd()
-  const mainPath = path.join(root, "lib", "main.ts")
-  const uiDir = path.join(root, "lib", "components", "ui")
+  const mainPath = path.join(root, 'lib', 'main.ts')
+  const uiDir = path.join(root, 'lib', 'components', 'ui')
   const modules = extractModulesFromMain(mainPath)
   const overlays = new Set([
-    "dialog",
-    "alert-dialog",
-    "drawer",
-    "sheet",
-    "popover",
-    "tooltip",
-    "hover-card",
+    'dialog',
+    'alert-dialog',
+    'drawer',
+    'sheet',
+    'popover',
+    'tooltip',
+    'hover-card',
   ])
   const errors = []
   const warnings = []
@@ -75,7 +78,9 @@ function run() {
       return
     }
     if (!fs.existsSync(storyPath)) {
-      errors.push(`Missing story: ${moduleName} → ${path.relative(root, storyPath)}`)
+      errors.push(
+        `Missing story: ${moduleName} → ${path.relative(root, storyPath)}`
+      )
       return
     }
     const storySrc = read(storyPath)
@@ -83,27 +88,31 @@ function run() {
       errors.push(`Missing autodocs tag in story: ${moduleName}`)
     }
     if (overlays.has(moduleName) && !checkControlledOpen(storySrc)) {
-      errors.push(`Overlay story not controlled (open: true) for: ${moduleName}`)
+      errors.push(
+        `Overlay story not controlled (open: true) for: ${moduleName}`
+      )
     }
     const exports = extractExportsFromModule(modulePath)
     if (exports.length > 1 && !hasSubcomponents(storySrc)) {
-      warnings.push(`Story missing subcomponents for: ${moduleName} (${exports.slice(1).join(", ")})`)
+      warnings.push(
+        `Story missing subcomponents for: ${moduleName} (${exports.slice(1).join(', ')})`
+      )
     }
   })
 
   if (errors.length || warnings.length) {
     if (warnings.length) {
-      console.warn("Storybook Quality Warnings:")
+      console.warn('Storybook Quality Warnings:')
       warnings.forEach((w) => console.warn(`- ${w}`))
     }
     if (errors.length) {
-      fail("Storybook Quality Errors:")
+      fail('Storybook Quality Errors:')
       errors.forEach((e) => fail(`- ${e}`))
       process.exitCode = 1
       return
     }
   }
-  console.log("Storybook Quality Checks: OK")
+  console.log('Storybook Quality Checks: OK')
 }
 
 run()

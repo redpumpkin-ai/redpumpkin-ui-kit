@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { Alert, AlertTitle, AlertDescription } from "./alert"
+import type { Meta, StoryObj } from '@storybook/react'
+import { Alert, AlertTitle, AlertDescription } from './alert'
 
 const meta = {
-  title: "UI/Alert",
+  title: 'UI/Alert',
   component: Alert,
   subcomponents: { AlertTitle, AlertDescription },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof Alert>;
+} satisfies Meta<typeof Alert>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Alert>;
+type Story = StoryObj<typeof Alert>
 
-export const Default: Story = {};
+export const Default: Story = {}

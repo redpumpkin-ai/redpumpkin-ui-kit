@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs"
+import type { Meta, StoryObj } from '@storybook/react'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs'
 
 const meta = {
-  title: "UI/Tabs",
+  title: 'UI/Tabs',
   component: Tabs,
   subcomponents: { TabsList, TabsTrigger, TabsContent },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof Tabs>;
+} satisfies Meta<typeof Tabs>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Tabs>;
+type Story = StoryObj<typeof Tabs>
 
-export const Default: Story = {};
+export const Default: Story = {}

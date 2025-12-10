@@ -1,23 +1,30 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "./resizable";
+import type { Meta, StoryObj } from '@storybook/react'
+import {
+  ResizablePanelGroup,
+  ResizablePanel,
+  ResizableHandle,
+} from './resizable'
 
 const meta = {
-  title: "UI/Resizable",
+  title: 'UI/Resizable',
   component: ResizablePanelGroup,
   subcomponents: { ResizablePanel, ResizableHandle },
-  tags: ["autodocs"],
-  args: { direction: "horizontal" as const },
+  tags: ['autodocs'],
+  args: { direction: 'horizontal' as const },
   argTypes: {
-    direction: { control: { type: "radio" }, options: ["horizontal", "vertical"] },
+    direction: {
+      control: { type: 'radio' },
+      options: ['horizontal', 'vertical'],
+    },
   },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof ResizablePanelGroup>;
+} satisfies Meta<typeof ResizablePanelGroup>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof ResizablePanelGroup>;
+type Story = StoryObj<typeof ResizablePanelGroup>
 
 export const Default: Story = {
   render: (args) => (
@@ -33,10 +40,10 @@ export const Default: Story = {
       </ResizablePanelGroup>
     </div>
   ),
-};
+}
 
 export const Vertical: Story = {
-  args: { direction: "vertical" },
+  args: { direction: 'vertical' },
   render: (args) => (
     <div className="h-48">
       <ResizablePanelGroup {...args}>
@@ -50,4 +57,4 @@ export const Vertical: Story = {
       </ResizablePanelGroup>
     </div>
   ),
-};
+}

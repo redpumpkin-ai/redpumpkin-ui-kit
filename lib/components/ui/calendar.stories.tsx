@@ -1,43 +1,46 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Calendar, CalendarDayButton } from "./calendar";
+import type { Meta, StoryObj } from '@storybook/react'
+import { Calendar, CalendarDayButton } from './calendar'
 
 const meta: Meta<typeof Calendar> = {
-  title: "UI/Calendar",
+  title: 'UI/Calendar',
   component: Calendar,
   subcomponents: { CalendarDayButton },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
-    mode: "single",
+    mode: 'single',
     selected: new Date(),
-    captionLayout: "label",
+    captionLayout: 'label',
   },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
   argTypes: {
-    mode: { control: { type: "radio" }, options: ["single", "multiple", "range"] },
+    mode: {
+      control: { type: 'radio' },
+      options: ['single', 'multiple', 'range'],
+    },
   },
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Calendar>;
+type Story = StoryObj<typeof Calendar>
 
-export const Default: Story = {};
+export const Default: Story = {}
 
 export const Multiple: Story = {
   args: {
-    mode: "multiple",
+    mode: 'multiple',
     selected: [new Date()],
   },
-};
+}
 
 export const Range: Story = {
   args: {
-    mode: "range",
+    mode: 'range',
     selected: {
       from: new Date(),
       to: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     },
   },
-};
+}

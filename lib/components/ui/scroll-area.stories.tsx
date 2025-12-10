@@ -1,20 +1,20 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { ScrollArea, ScrollBar } from "./scroll-area";
+import type { Meta, StoryObj } from '@storybook/react'
+import { ScrollArea, ScrollBar } from './scroll-area'
 
 const meta = {
-  title: "UI/ScrollArea",
+  title: 'UI/ScrollArea',
   component: ScrollArea,
   subcomponents: { ScrollBar },
-  tags: ["autodocs"],
-  args: { className: "h-48 w-64" },
+  tags: ['autodocs'],
+  args: { className: 'h-48 w-64' },
   parameters: {
-    controls: { exclude: ["className", "style", "ref", "asChild"] },
+    controls: { exclude: ['className', 'style', 'ref', 'asChild'] },
   },
-} satisfies Meta<typeof ScrollArea>;
+} satisfies Meta<typeof ScrollArea>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof ScrollArea>;
+type Story = StoryObj<typeof ScrollArea>
 
 export const Default: Story = {
   render: (args) => (
@@ -45,4 +45,4 @@ export const Default: Story = {
       </div>
     </ScrollArea>
   ),
-};
+}

@@ -1,24 +1,23 @@
-import type { StorybookConfig } from "@storybook/react-vite";
-import path from "path";
-import tailwindcss from "@tailwindcss/vite";
+import type { StorybookConfig } from '@storybook/react-vite'
+import path from 'path'
 
 const config: StorybookConfig = {
-  stories: ["../lib/**/*.stories.@(ts|tsx)"],
+  stories: ['../lib/**/*.stories.@(ts|tsx)'],
   addons: [],
   framework: {
-    name: "@storybook/react-vite",
+    name: '@storybook/react-vite',
     options: {},
   },
-  staticDirs: ["../public"],
+  staticDirs: ['../public'],
   viteFinal: async (config) => {
-    config.plugins = [...(config.plugins || []), tailwindcss()];
-    config.resolve = config.resolve || {};
+    config.plugins = [...(config.plugins || [])]
+    config.resolve = config.resolve || {}
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      "@": path.resolve(process.cwd(), "./"),
-    };
-    return config;
+      '@': path.resolve(process.cwd(), './'),
+    }
+    return config
   },
-};
+}
 
-export default config;
+export default config

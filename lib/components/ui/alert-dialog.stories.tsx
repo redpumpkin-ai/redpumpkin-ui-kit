@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import userEvent from "@testing-library/user-event";
+import type { Meta, StoryObj } from '@storybook/react'
+import userEvent from '@testing-library/user-event'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -10,11 +10,11 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "./alert-dialog";
-import { Button } from "./button";
+} from './alert-dialog'
+import { Button } from './button'
 
 const meta = {
-  title: "UI/AlertDialog",
+  title: 'UI/AlertDialog',
   component: AlertDialog,
   subcomponents: {
     AlertDialogAction,
@@ -26,23 +26,23 @@ const meta = {
     AlertDialogTitle,
     AlertDialogTrigger,
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     open: false,
   },
   argTypes: {
-    onOpenChange: { action: "onOpenChange" },
+    onOpenChange: { action: 'onOpenChange' },
   },
   parameters: {
     controls: {
-      exclude: ["className", "style", "ref", "asChild"],
+      exclude: ['className', 'style', 'ref', 'asChild'],
     },
   },
-} satisfies Meta<typeof AlertDialog>;
+} satisfies Meta<typeof AlertDialog>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof AlertDialog>;
+type Story = StoryObj<typeof AlertDialog>
 
 export const Default: Story = {
   render: (args) => (
@@ -66,11 +66,13 @@ export const Default: Story = {
     </AlertDialog>
   ),
   play: async ({ canvasElement }) => {
-    const buttons = Array.from(canvasElement.querySelectorAll("button"));
-    const trigger = buttons.find((b) => /show alert dialog/i.test(b.textContent || ""));
-    if (trigger) await userEvent.click(trigger);
+    const buttons = Array.from(canvasElement.querySelectorAll('button'))
+    const trigger = buttons.find((b) =>
+      /show alert dialog/i.test(b.textContent || '')
+    )
+    if (trigger) await userEvent.click(trigger)
   },
-};
+}
 
 export const Controlled: Story = {
   args: {
@@ -82,7 +84,8 @@ export const Controlled: Story = {
         <AlertDialogHeader>
           <AlertDialogTitle>Controlled Alert Dialog</AlertDialogTitle>
           <AlertDialogDescription>
-            This alert dialog is controlled with the open prop set to true by default.
+            This alert dialog is controlled with the open prop set to true by
+            default.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -92,7 +95,7 @@ export const Controlled: Story = {
       </AlertDialogContent>
     </AlertDialog>
   ),
-};
+}
 
 export const Destructive: Story = {
   render: (args) => (
@@ -117,4 +120,4 @@ export const Destructive: Story = {
       </AlertDialogContent>
     </AlertDialog>
   ),
-};
+}
