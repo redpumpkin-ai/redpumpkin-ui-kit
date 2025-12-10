@@ -37,8 +37,12 @@ export const Default: Story = {
         <EmptyMedia variant="icon">
           <InboxIcon className="size-6" />
         </EmptyMedia>
-        <EmptyTitle>No items found</EmptyTitle>
-        <EmptyDescription>Add items to see them listed here.</EmptyDescription>
+        <div className="flex-col gap-2">
+          <EmptyTitle>No items found</EmptyTitle>
+          <EmptyDescription>
+            Add items to see them listed here.
+          </EmptyDescription>
+        </div>
       </EmptyHeader>
       <EmptyContent>
         <Button>Add item</Button>
