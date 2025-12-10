@@ -39,12 +39,74 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* High Contrast Text */
+  --color-highcontrast-text-green: var(--highcontrast-text-green);
+  --color-highcontrast-text-blue: var(--highcontrast-text-blue);
+  --color-highcontrast-text-purple: var(--highcontrast-text-purple);
+  --color-highcontrast-text-red: var(--highcontrast-text-red);
+  --color-highcontrast-text-orange: var(--highcontrast-text-orange);
+  --color-highcontrast-text-teal: var(--highcontrast-text-teal);
+  --color-highcontrast-text-neutral: var(--highcontrast-text-neutral);
+  --color-highcontrast-text-pink: var(--highcontrast-text-pink);
+
+  /* Border */
+  --color-border-surface: var(--border-surface);
+  --color-border-on-surface: var(--border-on-surface);
+  --color-border-btn-white: var(--border-btn-white);
+  --color-border-btn-ghost: var(--border-btn-ghost);
+  --color-border-checkbox: var(--border-checkbox);
+  --color-border-material-muted: var(--border-material-muted);
+  --color-border-input-default: var(--border-input-default);
+
+  /* Button */
+  --color-button-primary: var(--button-primary);
+  --color-button-primary-hover: var(--button-primary-hover);
+  --color-button-negative: var(--button-negative);
+  --color-button-negative-hover: var(--button-negative-hover);
+  --color-button-white: var(--button-white);
+  --color-button-white-hover: var(--button-white-hover);
+  --color-button-muted: var(--button-muted);
+
+  /* Material High Contrast */
+  --color-material-high-contrast-green: var(--material-high-contrast-green);
+  --color-material-high-contrast-blue: var(--material-high-contrast-blue);
+  --color-material-high-contrast-purple: var(--material-high-contrast-purple);
+  --color-material-high-contrast-red: var(--material-high-contrast-red);
+  --color-material-high-contrast-orange: var(--material-high-contrast-orange);
+  --color-material-high-contrast-teal: var(--material-high-contrast-teal);
+  --color-material-high-contrast-neutral: var(--material-high-contrast-neutral);
+  --color-material-high-contrast-pink: var(--material-high-contrast-pink);
+
+  /* Bg High Contrast */
+  --color-bg-hc-green: var(--bg-hc-green);
+  --color-bg-hc-blue: var(--bg-hc-blue);
+  --color-bg-hc-purple: var(--bg-hc-purple);
+  --color-bg-hc-red: var(--bg-hc-red);
+  --color-bg-hc-orange: var(--bg-hc-orange);
+  --color-bg-hc-teal: var(--bg-hc-teal);
+  --color-bg-hc-neutral: var(--bg-hc-neutral);
+  --color-bg-hc-pink: var(--bg-hc-pink);
+
+  /* New Semantic Tokens */
+  --color-background-default: var(--background-default);
+  --color-background-secondary: var(--background-secondary);
+  --color-toggle-switch-true: var(--toggle-switch-true);
+  --color-toggle-switch-false: var(--toggle-switch-false);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-btn-white: var(--text-btn-white);
+  --color-text-link: var(--text-link);
+  --color-text-link-hover: var(--text-link-hover);
+  --color-text-muted: var(--text-muted);
+  --color-text-btn-primary: var(--text-btn-primary);
+  --color-text-material-surface: var(--text-material-surface);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: var(--color-white);
+  --foreground: var(--color-neutral-950);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -74,11 +136,75 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Background Group */
+  --background-default: var(--background);
+  --background-secondary: var(--color-neutral-50);
+  --toggle-switch-true: var(--color-neutral-950);
+  --toggle-switch-false: var(--color-neutral-200);
+
+  /* Text Color Group */
+  --text-primary: var(--foreground);
+  --text-secondary: var(--color-neutral-500);
+  --text-btn-white: var(--color-neutral-950);
+  --text-link: var(--color-blue-600);
+  --text-link-hover: var(--color-blue-500);
+  --text-muted: var(--color-neutral-600);
+  --text-btn-primary: var(--color-white);
+  --text-material-surface: var(--color-neutral-800);
+
+  /* High Contrast Text */
+  --highcontrast-text-green: var(--color-green-600);
+  --highcontrast-text-blue: var(--color-blue-600);
+  --highcontrast-text-purple: var(--color-purple-600);
+  --highcontrast-text-red: var(--color-red-600);
+  --highcontrast-text-orange: var(--color-orange-600);
+  --highcontrast-text-teal: var(--color-teal-600);
+  --highcontrast-text-neutral: var(--color-neutral-500);
+  --highcontrast-text-pink: var(--color-pink-600);
+
+  /* Border */
+  --border-surface: var(--color-neutral-400);
+  --border-on-surface: var(--color-neutral-400);
+  --border-btn-white: var(--color-neutral-400);
+  --border-btn-ghost: var(--color-neutral-400);
+  --border-checkbox: var(--color-neutral-200);
+  --border-material-muted: var(--color-neutral-300);
+  --border-input-default: var(--color-neutral-400);
+
+  /* Button */
+  --button-primary: var(--color-neutral-900);
+  --button-primary-hover: var(--color-neutral-600);
+  --button-negative: var(--color-red-600);
+  --button-negative-hover: var(--color-red-500);
+  --button-white: var(--color-white);
+  --button-white-hover: var(--color-neutral-100);
+  --button-muted: var(--color-neutral-100);
+
+  /* Material High Contrast */
+  --material-high-contrast-green: var(--color-green-600);
+  --material-high-contrast-blue: var(--color-blue-600);
+  --material-high-contrast-purple: var(--color-purple-600);
+  --material-high-contrast-red: var(--color-red-600);
+  --material-high-contrast-orange: var(--color-orange-600);
+  --material-high-contrast-teal: var(--color-teal-600);
+  --material-high-contrast-neutral: var(--color-neutral-500);
+  --material-high-contrast-pink: var(--color-pink-600);
+
+  /* Bg High Contrast */
+  --bg-hc-green: var(--color-green-100);
+  --bg-hc-blue: var(--color-blue-100);
+  --bg-hc-purple: var(--color-purple-100);
+  --bg-hc-red: var(--color-red-100);
+  --bg-hc-orange: var(--color-orange-100);
+  --bg-hc-teal: var(--color-teal-100);
+  --bg-hc-neutral: var(--color-neutral-300);
+  --bg-hc-pink: var(--color-pink-100);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: var(--color-neutral-950);
+  --foreground: var(--color-white);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -108,6 +234,70 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Background Group */
+  --background-default: var(--background);
+  --background-secondary: var(--color-neutral-900);
+  --toggle-switch-true: var(--color-white);
+  --toggle-switch-false: var(--color-neutral-500);
+
+  /* Text Color Group */
+  --text-primary: var(--foreground);
+  --text-secondary: var(--color-neutral-400);
+  --text-btn-white: var(--color-neutral-200);
+  --text-link: var(--color-blue-400);
+  --text-link-hover: var(--color-blue-500);
+  --text-muted: var(--color-neutral-500);
+  --text-btn-primary: var(--color-neutral-950);
+  --text-material-surface: var(--color-neutral-200);
+
+  /* High Contrast Text */
+  --highcontrast-text-green: var(--color-green-400);
+  --highcontrast-text-blue: var(--color-blue-400);
+  --highcontrast-text-purple: var(--color-purple-400);
+  --highcontrast-text-red: var(--color-red-500);
+  --highcontrast-text-orange: var(--color-orange-400);
+  --highcontrast-text-teal: var(--color-teal-400);
+  --highcontrast-text-neutral: var(--color-neutral-200);
+  --highcontrast-text-pink: var(--color-pink-400);
+
+  /* Border */
+  --border-surface: var(--color-neutral-700);
+  --border-on-surface: var(--color-neutral-600);
+  --border-btn-white: var(--color-neutral-600);
+  --border-btn-ghost: var(--color-neutral-600);
+  --border-checkbox: var(--color-neutral-600);
+  --border-material-muted: var(--color-neutral-700);
+  --border-input-default: var(--color-neutral-600);
+
+  /* Button */
+  --button-primary: var(--color-white);
+  --button-primary-hover: var(--color-neutral-300);
+  --button-negative: var(--color-red-500);
+  --button-negative-hover: var(--color-red-400);
+  --button-white: var(--color-neutral-800);
+  --button-white-hover: var(--color-neutral-700);
+  --button-muted: var(--color-neutral-700);
+
+  /* Material High Contrast */
+  --material-high-contrast-green: var(--color-green-400);
+  --material-high-contrast-blue: var(--color-blue-400);
+  --material-high-contrast-purple: var(--color-purple-400);
+  --material-high-contrast-red: var(--color-red-500);
+  --material-high-contrast-orange: var(--color-orange-400);
+  --material-high-contrast-teal: var(--color-teal-400);
+  --material-high-contrast-neutral: var(--color-white);
+  --material-high-contrast-pink: var(--color-pink-400);
+
+  /* Bg High Contrast */
+  --bg-hc-green: var(--color-green-700);
+  --bg-hc-blue: var(--color-blue-700);
+  --bg-hc-purple: var(--color-purple-700);
+  --bg-hc-red: var(--color-red-700);
+  --bg-hc-orange: var(--color-orange-700);
+  --bg-hc-teal: var(--color-teal-700);
+  --bg-hc-neutral: var(--color-neutral-800);
+  --bg-hc-pink: var(--color-pink-700);
 }
 
 @layer base {
