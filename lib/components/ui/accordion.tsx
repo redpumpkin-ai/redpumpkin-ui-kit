@@ -3,7 +3,8 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDownIcon } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
-import { Tag } from './tags'
+// Assuming the Tag component is located in a different file, update the import path accordingly
+import { Tag } from '@/lib/components/ui/badge' // Update this path based on the actual location of the Tag component
 
 function Accordion({
   ...props
