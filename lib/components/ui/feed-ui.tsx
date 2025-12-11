@@ -34,9 +34,9 @@ const FeedItem = React.forwardRef<HTMLDivElement, FeedItemProps>(
     },
     ref
   ) => {
-    const lineBar = <div className="h-6 w-0.5 shrink-0" />
+    const lineBar = <div className="h-6 w-0.5 shrink-0 border" />
     const lineBarExpand = (
-      <div className="min-h-px w-0.5 min-w-px shrink-0 grow basis-0" />
+      <div className="min-h-px w-0.5 min-w-px shrink-0 grow basis-0 border" />
     )
 
     return (
