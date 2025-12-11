@@ -68,7 +68,7 @@ const FeedItem = React.forwardRef<HTMLDivElement, FeedItemProps>(
           <div className="flex w-full shrink-0 items-start gap-3">
             {alignBadges === 'vertical' ? (
               <div className="flex min-h-px min-w-px shrink-0 grow basis-0 flex-col items-start gap-2">
-                <p className="text-foreground text-base leading-tight font-medium tracking-tight break-words whitespace-normal">
+                <p className="text-foreground text-base leading-tight font-medium tracking-tight wrap-break-word whitespace-normal">
                   {header}
                 </p>
                 {badge && (
