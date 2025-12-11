@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './button'
+import { LayoutDashboard } from 'lucide-react'
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',
@@ -66,5 +67,5 @@ export const Large: Story = {
 }
 
 export const WithIconSize: Story = {
-  args: { size: 'icon' },
+  args: { size: 'icon', children: <LayoutDashboard /> },
 }
