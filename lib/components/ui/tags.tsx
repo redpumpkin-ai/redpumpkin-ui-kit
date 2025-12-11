@@ -5,21 +5,21 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const tagVariants = cva(
-  'inline-flex items-center justify-center rounded-[4px] border border-solid text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 [&>svg]:size-3 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden',
+  'inline-flex items-center justify-center rounded-[6px] border border-solid text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 [&>svg]:size-3 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden',
   {
     variants: {
       color: {
         green:
-          'border-material-high-contrast-green bg-bg-hc-green text-highcontrast-text-green',
-        blue: 'border-material-high-contrast-blue bg-bg-hc-blue text-highcontrast-text-blue',
+          'border-material-high-contrast-green bg-bg-hc-green/60 text-highcontrast-text-green',
+        blue: 'border-material-high-contrast-blue bg-bg-hc-blue/60 text-highcontrast-text-blue',
         purple:
-          'border-material-high-contrast-purple bg-bg-hc-purple text-highcontrast-text-purple',
+          'border-material-high-contrast-purple bg-bg-hc-purple/60 text-highcontrast-text-purple',
         red: 'border-material-high-contrast-red bg-bg-hc-red text-highcontrast-text-red',
         orange:
-          'border-material-high-contrast-orange bg-bg-hc-orange text-highcontrast-text-orange',
+          'border-material-high-contrast-orange bg-bg-hc-orange/60 text-highcontrast-text-orange',
         teal: 'border-material-high-contrast-teal bg-bg-hc-teal text-highcontrast-text-teal',
         neutral:
-          'border-material-high-contrast-neutral bg-bg-hc-neutral text-highcontrast-text-neutral',
+          'border-material-high-contrast-neutral bg-bg-hc-neutral/60 text-highcontrast-text-neutral',
         pink: 'border-material-high-contrast-pink bg-bg-hc-pink text-highcontrast-text-pink',
       },
       padding: {

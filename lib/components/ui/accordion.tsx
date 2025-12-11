@@ -3,6 +3,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDownIcon } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
+import { Tag } from './tags'
 
 function Accordion({
   ...props
@@ -27,12 +28,14 @@ interface AccordionTriggerProps extends React.ComponentProps<
   typeof AccordionPrimitive.Trigger
 > {
   badge?: string
+  badgesVariant?: 'default' | 'outline' | 'rounded'
 }
 
 function AccordionTrigger({
   className,
   children,
   badge,
+  badgesVariant,
   ...props
 }: AccordionTriggerProps) {
   return (
@@ -46,13 +49,11 @@ function AccordionTrigger({
         {...props}
       >
         <div className="flex items-center gap-4">
-          <span className="text-base font-medium text-neutral-900">
-            {children}
-          </span>
+          <span className="text-base font-medium">{children}</span>
           {badge && (
-            <span className="font-regular inline-flex items-center rounded bg-green-100 px-1.5 py-0.5 text-xs whitespace-nowrap text-green-700">
+            <Tag variant={badgesVariant} color="green">
               {badge}
-            </span>
+            </Tag>
           )}
         </div>
         <ChevronDownIcon className="pointer-events-none size-6 shrink-0 text-neutral-600 transition-transform duration-200" />
