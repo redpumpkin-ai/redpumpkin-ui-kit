@@ -35,7 +35,7 @@ const tagVariants = cva(
       variant: {
         default: '',
         outline: 'border-transparent',
-        rounded: 'rounded-full',
+        rounded: 'rounded-full border-transparent',
       },
       icon: {
         true: '[&>svg]:flex [&>svg]:size-2',

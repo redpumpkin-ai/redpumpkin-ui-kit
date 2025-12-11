@@ -29,7 +29,7 @@ export const Default: Story = {
     <div className="max-w-2xl overflow-hidden rounded-md border border-neutral-200">
       <Accordion {...args}>
         <AccordionItem value="item-1">
-          <AccordionTrigger badge="Badges label" badgesVariant="outline">
+          <AccordionTrigger badge="Badges label" badgesVariant="rounded">
             This is accordion
           </AccordionTrigger>
           <AccordionContent>
@@ -39,7 +39,7 @@ export const Default: Story = {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger badge="Badges label" badgesVariant="outline">
+          <AccordionTrigger badge="Badges label" badgesVariant="rounded">
             This is accordion
           </AccordionTrigger>
           <AccordionContent>
@@ -50,7 +50,7 @@ export const Default: Story = {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger badge="Badges label" badgesVariant="outline">
+          <AccordionTrigger badge="Badges label" badgesVariant="rounded">
             This is accordion
           </AccordionTrigger>
           <AccordionContent>

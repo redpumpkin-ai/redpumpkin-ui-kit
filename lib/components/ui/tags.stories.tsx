@@ -43,7 +43,7 @@ const meta: Meta<typeof Tag> = {
     },
     variant: {
       control: { type: 'radio' },
-      options: ['default', 'outline'],
+      options: ['default', 'outline', 'rounded'],
     },
     showDot: {
       control: { type: 'boolean' },
@@ -180,6 +180,15 @@ export const OutlineBlue: Story = {
     variant: 'outline',
     color: 'blue',
     showDot: true,
+  },
+}
+
+export const Rounded: Story = {
+  args: {
+    variant: 'rounded',
+    color: 'green',
+    showDot: true,
+    children: 'Rounded',
   },
 }
 
