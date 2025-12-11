@@ -1,6 +1,5 @@
 import '../lib/index.css'
 import type { Decorator } from '@storybook/react'
-import { SidebarProvider } from '../lib/components/ui/sidebar'
 
 export const globalTypes = {
   theme: {
@@ -25,11 +24,9 @@ const withTheme: Decorator = (Story, context) => {
   if (theme === 'dark') root.classList.add('dark')
 
   return (
-    <SidebarProvider>
-      <div className="bg-background text-foreground min-h-screen p-8">
-        <Story />
-      </div>
-    </SidebarProvider>
+    <div className="bg-background text-foreground w-full p-8">
+      <Story />
+    </div>
   )
 }
 
