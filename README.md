@@ -32,11 +32,31 @@ The kit supports light/dark color tokens. Apply `class="dark"` on a top-level el
 3. Click add MCP and choose `add manually`
 4. Click Raw config JSON and paste the following configuration
 
-  ```
+  ```json
   {
     "mcpServers": {
       "storybook-mcp": {
         "url": "http://localhost:6006/mcp"
+      }
+    }
+  }
+  ```
+
+#### Google Antigravity
+
+![image](./assets/1.png)
+1. Open the `...` at the right of the agent conversation
+2. Click `MCP Servers`
+3. Click `Manage MCP Servers`
+4. Click `View Raw Config`
+5. Paste the following configuration
+  ```json
+  {
+    "mcpServers": {
+      "storybook-mcp": {
+        "serverUrl": "http://localhost:6006/mcp/",
+        "headers": {},
+        "disabled": false
       }
     }
   }
