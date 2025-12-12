@@ -8,7 +8,7 @@ import {
   CardTitle,
   Input,
   Label,
-  Badge,
+  Tag,
   Avatar,
   AvatarFallback,
   AvatarImage,
@@ -65,10 +65,9 @@ function App() {
         </Section>
 
         <Section title="Badges">
-          <Badge>Default</Badge>
-          <Badge variant="secondary">Secondary</Badge>
-          <Badge variant="outline">Outline</Badge>
-          <Badge variant="destructive">Destructive</Badge>
+          <Tag>Default</Tag>
+          <Tag variant="outline">Outline</Tag>
+          <Tag variant="rounded">Rounded</Tag>
         </Section>
 
         <Section title="Inputs">
