@@ -26,7 +26,7 @@ type Story = StoryObj<typeof Accordion>
 
 export const Default: Story = {
   render: (args) => (
-    <div className="max-w-2xl overflow-hidden rounded-md border border-neutral-200">
+    <div className="max-w-2xl overflow-hidden rounded-lg border border-neutral-200">
       <Accordion {...args}>
         <AccordionItem value="item-1">
           <AccordionTrigger badge="Badges label" badgesVariant="rounded">
@@ -67,7 +67,7 @@ export const Default: Story = {
 
 export const WithoutBadge: Story = {
   render: (args) => (
-    <div className="max-w-2xl overflow-hidden rounded-md border border-neutral-200">
+    <div className="max-w-2xl overflow-hidden rounded-lg border border-neutral-200">
       <Accordion {...args}>
         <AccordionItem value="item-1">
           <AccordionTrigger>This is accordion</AccordionTrigger>
