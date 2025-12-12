@@ -26,10 +26,10 @@ type Story = StoryObj<typeof Accordion>
 
 export const Default: Story = {
   render: (args) => (
-    <div className="max-w-2xl overflow-hidden rounded-md border border-neutral-300">
+    <div className="max-w-2xl overflow-hidden rounded-md border border-neutral-200">
       <Accordion {...args}>
         <AccordionItem value="item-1">
-          <AccordionTrigger badge="Badges label">
+          <AccordionTrigger badge="Badges label" badgesVariant="rounded">
             This is accordion
           </AccordionTrigger>
           <AccordionContent>
@@ -39,7 +39,7 @@ export const Default: Story = {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger badge="Badges label">
+          <AccordionTrigger badge="Badges label" badgesVariant="rounded">
             This is accordion
           </AccordionTrigger>
           <AccordionContent>
@@ -50,7 +50,7 @@ export const Default: Story = {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger badge="Badges label">
+          <AccordionTrigger badge="Badges label" badgesVariant="rounded">
             This is accordion
           </AccordionTrigger>
           <AccordionContent>
@@ -67,12 +67,12 @@ export const Default: Story = {
 
 export const WithoutBadge: Story = {
   render: (args) => (
-    <div className="max-w-2xl overflow-hidden rounded-md border border-neutral-300">
+    <div className="max-w-2xl overflow-hidden rounded-md border border-neutral-200">
       <Accordion {...args}>
         <AccordionItem value="item-1">
           <AccordionTrigger>This is accordion</AccordionTrigger>
           <AccordionContent>
-            Set up your tax configurations to ensure compliance with local and
+            et up your tax configurations to ensure compliance with local and
             international regulations. Define tax rates for different regions,
             configure tax exemptions, and automate tax calculations for various
             product categories.
