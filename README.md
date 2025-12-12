@@ -24,6 +24,26 @@ The kit supports light/dark color tokens. Apply `class="dark"` on a top-level el
 
 ## Usage
 
+### MCP Server
+
+#### Trae
+1. Open Trae settings
+2. Navigate settings' sidebar to MCP settings
+3. Click add MCP and choose `add manually`
+4. Click Raw config JSON and paste the following configuration
+
+  ```
+  {
+    "mcpServers": {
+      "storybook-mcp": {
+        "url": "http://localhost:6006/mcp"
+      }
+    }
+  }
+  ```
+
+### Utilizing Components
+
 Import components directly from the package:
 
 ```tsx
