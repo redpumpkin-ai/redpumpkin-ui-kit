@@ -57,7 +57,7 @@ function AccordionTrigger({
             </Tag>
           )}
         </div>
-        <ChevronDownIcon className="pointer-events-none size-6 shrink-0 text-neutral-600 transition-transform duration-200" />
+        <ChevronDownIcon className="pointer-events-none size-4 shrink-0 text-neutral-600 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )
