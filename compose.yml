@@ -1,0 +1,11 @@
+services:
+  mcp:
+    build: .
+    container_name: storybook-mcp
+    ports:
+      - 6006:6006
+    stdin_open: true
+    tty: false
+    restart: "no"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
