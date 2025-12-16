@@ -79,6 +79,11 @@ type SidebarStoryArgs = React.ComponentProps<typeof Sidebar> & {
 }
 
 export const Default: Story = {
+  args: {
+    variant: 'floating',
+    collapsible: 'icon',
+  },
+
   render: (args: SidebarStoryArgs) => {
     const { open, onOpenChange, ...rest } = args
     return (
