@@ -6,11 +6,30 @@ The kit ships both ES Module and UMD builds, type definitions, and a compiled st
 
 ## Installation
 
+Since this library is not published to npm, you can install it directly from the Git repository.
+
+### 1. Install the package
+
 ```bash
-npm install redpumpkin-ui-kit
+# Using npm
+npm install git+https://github.com/Redpumpkin/redpumpkin-ui-kit.git
+
+# Using yarn
+yarn add git+https://github.com/Redpumpkin/redpumpkin-ui-kit.git
+
+# Using pnpm
+pnpm add git+https://github.com/Redpumpkin/redpumpkin-ui-kit.git
 ```
 
-This library declares `react` and `react-dom` as peer dependencies. Ensure they are installed in your project. Components that rely on Radix UI also expect the corresponding `@radix-ui/react-*` package to be present; install peers as needed based on the components you use.
+> **Note**: Replace the URL with your specific branch URL if needed (e.g., `git+https://github.com/Redpumpkin/redpumpkin-ui-kit.git#branch-name`).
+
+### 2. Install Peer Dependencies
+
+This library has minimal peer dependencies: `react` and `react-dom`.
+
+Ensure they are installed in your project (versions ^18.0.0 or ^19.0.0).
+
+> **Note**: All other internal dependencies (like Radix UI primitives) are automatically installed when you add the package.
 
 ## Styles
 
@@ -84,7 +103,6 @@ All components are exported from the package root. Examples include `Accordion`,
 ## Module Formats
 
 - ESM: `redpumpkin-ui-kit.es.js` for modern bundlers (`import { Button } from 'redpumpkin-ui-kit'`).
-- UMD: `redpumpkin-ui-kit.umd.js` with global `RedpumpkinUIKit` for non-ESM contexts.
 - Types: `redpumpkin-ui-kit.d.ts` for TypeScript.
 
 ## Notes

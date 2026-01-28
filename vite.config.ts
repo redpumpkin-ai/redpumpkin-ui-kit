@@ -27,14 +27,14 @@ export default defineConfig({
       // The entry point for your library. This should export all components.
       entry: resolve(__dirname, 'lib/main.ts'),
       name: 'RedpumpkinUIKit',
-      // We recommend 'es' (ES Module) and 'umd' (Universal Module Definition)
-      formats: ['es', 'umd'],
-      // The name of the output file (e.g., 'your-ui-kit.es.js', 'your-ui-kit.umd.js')
+      // We recommend 'es' (ES Module)
+      formats: ['es'],
+      // The name of the output file (e.g., 'your-ui-kit.es.js')
       fileName: (format) => `redpumpkin-ui-kit.${format}.js`,
     },
     // Make sure to externalize React and any dependencies you don't want bundled
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', /^@radix-ui\//],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         // Provide global variables for externalized modules in UMD build
         globals: {
