@@ -16,7 +16,7 @@ interface TokenUsageProps {
         label: string;
         color: string;
     };
-    bgColor: string;
+    bgColor?: string;
 }
 
 export function TokenUsage({ inputTokens, outputTokens, totalTokens, bgColor = "#F7F9F9" }: TokenUsageProps) {
