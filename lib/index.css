@@ -101,6 +101,9 @@
   --color-text-muted: var(--text-muted);
   --color-text-btn-primary: var(--text-btn-primary);
   --color-text-material-surface: var(--text-material-surface);
+
+  /* Font */
+  --font-sans: var(--font-sans);
 }
 
 :root {
@@ -200,6 +203,9 @@
   --bg-hc-teal: var(--color-teal-100);
   --bg-hc-neutral: var(--color-neutral-300);
   --bg-hc-pink: var(--color-pink-100);
+
+  /* Font */
+  --font-sans: "Inter", sans-serif;
 }
 
 .dark {
@@ -298,6 +304,13 @@
   --bg-hc-teal: var(--color-teal-700);
   --bg-hc-neutral: var(--color-neutral-800);
   --bg-hc-pink: var(--color-pink-700);
+
+  /* Font */
+  --font-sans: "Inter", sans-serif;
+}
+
+@theme {
+  --text-title: 2rem;
 }
 
 @layer base {
