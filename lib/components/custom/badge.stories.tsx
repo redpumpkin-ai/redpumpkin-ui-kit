@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { colors } from "@/lib/utils/color";
 import { Badge } from "./badge";
 
 const meta: Meta<typeof Badge> = {
@@ -9,6 +10,13 @@ const meta: Meta<typeof Badge> = {
         color: {
             control: "color",
         },
+        size: {
+            control: "select",
+            options: ["sm", "md", "lg"],
+        },
+        showDot: {
+            control: "boolean",
+        },
     },
 };
 
@@ -17,7 +25,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        color: "#27A847",
+        size: "md",
+        color: colors.green,
         children: "Default",
+        showDot: true,
+    },
+};
+
+export const NoDot: Story = {
+    args: {
+        size: "md",
+        color: colors.green,
+        children: "No Dot",
+        showDot: false,
     },
 };
