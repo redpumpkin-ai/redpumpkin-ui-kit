@@ -1,5 +1,3 @@
-import { Terminal } from "lucide-react";
-
 import {
     Button,
     Card,
@@ -10,13 +8,11 @@ import {
     CardTitle,
     Input,
     Label,
-    Tag,
+    Badge,
     Avatar,
     AvatarFallback,
     AvatarImage,
     Alert,
-    AlertTitle,
-    AlertDescription,
     Separator,
     SidebarProvider,
     SidebarBody,
@@ -24,6 +20,8 @@ import {
     SidebarBodyContent,
     SidebarBodyWrapper,
 } from "@/lib/main";
+
+import { colors } from "@/lib/utils/color";
 
 import { AppSidebar } from "./sidebar";
 
@@ -90,9 +88,10 @@ function MainContent() {
                 </Section>
 
                 <Section title="Badges">
-                    <Tag>Default</Tag>
-                    <Tag variant="outline">Outline</Tag>
-                    <Tag variant="rounded">Rounded</Tag>
+                    <Badge color={colors.green}>Success</Badge>
+                    <Badge color={colors.red}>Failed</Badge>
+                    <Badge color={colors.orange}>Warning</Badge>
+                    <Badge color={colors.blue}>Info</Badge>
                 </Section>
 
                 <Section title="Inputs">
@@ -137,20 +136,18 @@ function MainContent() {
                 </Section>
 
                 <Section title="Alerts">
-                <Alert>
-                    <Terminal className="h-4 w-4" />
-                    <AlertTitle>Heads up!</AlertTitle>
-                    <AlertDescription>
-                    You can add components to your app using the cli.
-                    </AlertDescription>
-                </Alert>
-                <Alert variant="destructive">
-                    <Terminal className="h-4 w-4" />
-                    <AlertTitle>Error</AlertTitle>
-                    <AlertDescription>
-                    Your session has expired. Please log in again.
-                    </AlertDescription>
-                </Alert>
+                    <Alert variant="success" onClose={() => {}}>
+                        Success alert
+                    </Alert>
+                    <Alert variant="danger" onClose={() => {}}>
+                        Danger alert
+                    </Alert>
+                    <Alert variant="warning" onClose={() => {}}>
+                        Warning alert
+                    </Alert>
+                    <Alert variant="info" onClose={() => {}}>
+                        Info alert
+                    </Alert>
                 </Section>
             </div>
         </div>
