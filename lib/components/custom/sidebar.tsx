@@ -314,9 +314,9 @@ export function SidebarUserProfile({
                         {
                             open && (
                                 <>
-                                    <div className="flex-grow">
-                                        <div className="text-sm font-medium">{name}</div>
-                                        <div className="text-xs text-muted-foreground">{email}</div>
+                                    <div className="grid flex-grow">
+                                        <div className="line-clamp-1 text-sm font-medium text-ellipsis">{name}</div>
+                                        <div className="line-clamp-1 text-xs text-muted-foreground text-ellipsis">{email}</div>
                                     </div>
                                     <Button
                                         type="button"

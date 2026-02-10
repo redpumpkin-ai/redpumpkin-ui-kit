@@ -97,7 +97,7 @@ export const Default: Story = {
                     <span className="block h-px bg-border"></span>
                     <SidebarUserProfile
                         name="John Doe"
-                        email="john@gmail.com"
+                        email="john.doe.support@gmail.com"
                         menu={
                             <>
                                 <SidebarUserProfileMenuItem
