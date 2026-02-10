@@ -1,13 +1,13 @@
 import './index.css'
 export * from './components/ui/accordion'
 export * from './components/ui/alert-dialog'
-export * from './components/ui/alert'
+// export * from './components/ui/alert'
 export * from './components/ui/aspect-ratio'
 export * from './components/ui/avatar'
 export * from './components/ui/breadcrumb'
 export * from './components/ui/button-group'
 export * from './components/ui/button'
-export * from './components/ui/badge'
+// export * from './components/ui/badge'
 export * from './components/ui/calendar'
 export * from './components/ui/card'
 export * from './components/ui/carousel'
@@ -32,9 +32,9 @@ export * from './components/ui/kbd'
 export * from './components/ui/label'
 export * from './components/ui/menubar'
 export * from './components/ui/navigation-menu'
-export * from './components/ui/pagination'
+// export * from './components/ui/pagination'
 export * from './components/ui/popover'
-export * from './components/ui/progress'
+// export * from './components/ui/progress'
 export * from './components/ui/radio-group'
 export * from './components/ui/resizable'
 export * from './components/ui/scroll-area'
@@ -55,5 +55,11 @@ export * from './components/ui/toggle'
 export * from './components/ui/tooltip'
 
 // custom
+export * from './components/custom/alert'
+export * from './components/custom/badge';
+export * from './components/custom/block-title';
+export * from './components/custom/pagination';
+export * from './components/custom/pick-color';
+export * from './components/custom/progress';
+export * from './components/custom/sidebar';
 export * from './components/custom/token-usage';
-export * from './components/custom/sidebar'
