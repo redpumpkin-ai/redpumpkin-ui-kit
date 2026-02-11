@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { PanelLeft, ChevronUp, ChevronDown, ChevronsUpDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -8,6 +8,7 @@ import { Button } from "@/lib/components/ui/button";
 import { ScrollArea } from "@/lib/components/ui/scroll-area";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/lib/components/ui/select";
 import { Popover, PopoverTrigger, PopoverContent } from "@/lib/components/ui/popover";
+import { Skeleton } from "@/lib/components/ui/skeleton";
 
 interface SidebarContext {
     open: boolean;
@@ -143,6 +144,14 @@ export function SidebarMenuTitle({ label }: { label: string }) {
     );
 }
 
+export function SidebarMenuSkeleton() {
+    return (
+        <li>
+            <Skeleton className="w-full h-10 bg-gray-100" />
+        </li>
+    );
+}
+
 export function SidebarMenuSeparator() {
     const { open } = useSidebar();
 
@@ -197,12 +206,26 @@ export function SidebarMenuDropdown({ id, icon, label, isActive, children }: {
     isActive?: boolean;
     children: React.ReactNode;
 }) {
-    const { open } = useSidebar();
+    const { open, setOpen } = useSidebar();
     const [isOpen, setIsOpen] = useState<boolean>(isActive ?? false);
+
+    useEffect(() => {
+        if (!open && isOpen) {
+            setIsOpen(false);
+        }
+    }, [open]);
+
+    const handleToggle = () => {
+        setIsOpen(prev => !prev);
+
+        if (!open) {
+            setOpen(true);
+        }
+    };
 
     return (
         <li className={`sidebar-menu-${id}`}>
-            <button type="button" onClick={() => setIsOpen(prev => !prev)} className={cn(
+            <button type="button" onClick={handleToggle} className={cn(
                     "flex py-2.5 px-3 min-h-[42px] gap-2 w-full text-sm text-left items-center border border-transparent rounded-md transition-colors whitespace-nowrap hover:bg-secondary",
                     isActive && "bg-secondary border-border"
                 )}
@@ -423,8 +446,10 @@ export function SidebarBodyContent({ children }: { children: React.ReactNode; })
 
 export function SidebarBodyWrapper({ children, className }: { children: React.ReactNode; className?: string; }) {
     return (
-        <ScrollArea className={cn("p-4", className)} style={{ height: "calc(100% - 65px)" }}>
-            {children}
+        <ScrollArea style={{ height: "calc(100% - 65px)" }}>
+            <div className={cn("p-4", className)}>
+                {children}
+            </div>
         </ScrollArea>
     );
 }

@@ -33,8 +33,8 @@ function Section({
     children: React.ReactNode
 }) {
     return (
-        <section className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+        <section className="space-y-3">
+            <h2 className="text-1xl font-semibold tracking-tight">{title}</h2>
             <Separator />
             <div className="flex flex-wrap items-center gap-4">{children}</div>
         </section>
@@ -48,7 +48,7 @@ export default function App() {
                 <AppSidebar />
                 <SidebarBodyContent>
                     <SidebarBodyHeader>
-                        Header
+                        <span className="text-sm">Header</span>
                     </SidebarBodyHeader>
                     <SidebarBodyWrapper>
                         <MainContent />
@@ -61,13 +61,13 @@ export default function App() {
 
 function MainContent() {
     return (
-        <div className="bg-background-default text-foreground min-h-screen p-8 font-sans">
-            <div className="mx-auto max-w-4xl space-y-12">
-                <header className="space-y-2">
-                    <h1 className="text-4xl font-bold tracking-tight">
-                        RedPumpkin UI Kit
+        <div className="bg-background-default text-foreground">
+            <div className="grid gap-6">
+                <header className="space-y-1">
+                    <h1 className="text-3xl font-medium tracking-tight">
+                        Redpumpkin UI Kit
                     </h1>
-                    <p className="text-muted-foreground text-lg">
+                    <p className="text-muted-foreground text-sm">
                         A comprehensive component library for building modern web
                         applications.
                     </p>
@@ -95,44 +95,44 @@ function MainContent() {
                 </Section>
 
                 <Section title="Inputs">
-                <div className="grid w-full max-w-sm items-center gap-1.5">
-                    <Label htmlFor="email">Email</Label>
-                    <Input type="email" id="email" placeholder="Email" />
-                </div>
-                <div className="grid w-full max-w-sm items-center gap-1.5">
-                    <Label htmlFor="password">Password</Label>
-                    <Input type="password" id="password" placeholder="Password" />
-                </div>
+                    <div className="grid w-full max-w-sm items-center gap-1.5">
+                        <Label htmlFor="email">Email</Label>
+                        <Input type="email" id="email" placeholder="Email" />
+                    </div>
+                    <div className="grid w-full max-w-sm items-center gap-1.5">
+                        <Label htmlFor="password">Password</Label>
+                        <Input type="password" id="password" placeholder="Password" />
+                    </div>
                 </Section>
 
                 <Section title="Cards">
-                <Card className="w-[350px]">
-                    <CardHeader>
-                    <CardTitle>Create project</CardTitle>
-                    <CardDescription>
-                        Deploy your new project in one-click.
-                    </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                    <p className="text-muted-foreground text-sm">
-                        Your new project will be deployed to Vercel.
-                    </p>
-                    </CardContent>
-                    <CardFooter className="flex justify-between">
-                    <Button variant="outline">Cancel</Button>
-                    <Button>Deploy</Button>
-                    </CardFooter>
-                </Card>
+                    <Card className="w-[350px]">
+                        <CardHeader>
+                            <CardTitle>Create project</CardTitle>
+                            <CardDescription>
+                                Deploy your new project in one-click.
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground text-sm">
+                                Your new project will be deployed to Vercel.
+                            </p>
+                        </CardContent>
+                        <CardFooter className="flex justify-between">
+                            <Button variant="outline">Cancel</Button>
+                            <Button>Deploy</Button>
+                        </CardFooter>
+                    </Card>
                 </Section>
 
                 <Section title="Avatars">
-                <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                    <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-                <Avatar>
-                    <AvatarFallback>JD</AvatarFallback>
-                </Avatar>
+                    <Avatar>
+                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <Avatar>
+                        <AvatarFallback>JD</AvatarFallback>
+                    </Avatar>
                 </Section>
 
                 <Section title="Alerts">
