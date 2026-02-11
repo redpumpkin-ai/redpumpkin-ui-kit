@@ -4,7 +4,7 @@ import { ChevronDownIcon } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 // Assuming the Tag component is located in a different file, update the import path accordingly
-import { Tag } from '@/lib/components/ui/badge' // Update this path based on the actual location of the Tag component
+import { Tag } from '@/lib/components/ui/tag' // Update this path based on the actual location of the Tag component
 
 function Accordion({
   ...props

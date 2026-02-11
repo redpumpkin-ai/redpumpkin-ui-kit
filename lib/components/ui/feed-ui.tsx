@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { Tag } from './badge'
+import { Tag } from './tag'
 
 interface FeedItemProps {
   timestamp?: string
