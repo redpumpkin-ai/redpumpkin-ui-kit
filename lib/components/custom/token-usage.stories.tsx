@@ -4,6 +4,7 @@ import { TokenUsage } from "./token-usage";
 const meta = {
     title: "Custom/TokenUsage",
     component: TokenUsage,
+    tags: ["autodocs"],
     args: {
         inputTokens: {
             value: 100,

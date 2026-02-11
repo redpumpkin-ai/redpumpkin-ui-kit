@@ -58,6 +58,8 @@ export * from './components/ui/tooltip'
 export * from './components/custom/alert'
 export * from './components/custom/badge';
 export * from './components/custom/block-title';
+export * from './components/custom/drawer';
+export * from './components/custom/modal';
 export * from './components/custom/pagination';
 export * from './components/custom/pick-color';
 export * from './components/custom/progress';

@@ -27,6 +27,7 @@ import {
 const meta = {
     title: "Custom/Sidebar",
     component: Sidebar,
+    tags: ["autodocs"],
     decorators: [
         (Story) => (
             <SidebarProvider>

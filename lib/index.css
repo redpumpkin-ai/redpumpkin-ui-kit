@@ -321,3 +321,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.textarea-autoheight {
+  field-sizing: content;
+}
+
+.modal .modal-card,
+.drawer .drawer-content {
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 14px 62px 0 #00000040;
+}
