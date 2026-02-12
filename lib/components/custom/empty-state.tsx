@@ -1,14 +1,20 @@
 import { cn } from "@/lib/utils";
 
 export interface EmptyStateProps {
-    description: string;
-    imageUrl: string;
+    description?: string;
+    imageUrl?: string;
     className?: string;
     imageClassName?: string;
     descClassName?: string;
 }
 
-export function EmptyState({ description, imageUrl, className, imageClassName, descClassName }: EmptyStateProps) {
+export function EmptyState({
+    description = "No data available",
+    imageUrl = "/images/icon-empty-data.svg",
+    className,
+    imageClassName,
+    descClassName,
+}: EmptyStateProps) {
     return (
         <div className={cn("grid text-center", className)}>
             <div className={cn("mx-auto max-w-[200px]", imageClassName)}>
