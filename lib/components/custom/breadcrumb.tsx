@@ -1,28 +1,28 @@
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export interface BreadcrumbItem {
+export interface CustomBreadcrumbItem {
     path: string;
     label: string;
 }
 
-export interface BreadcrumbProps {
-    items: BreadcrumbItem[];
+export interface CustomBreadcrumbProps {
+    items: CustomBreadcrumbItem[];
     separator?: string | React.JSX.Element;
     activeClassName?: string;
     linkClassName?: string;
     separatorClassName?: string;
-    customLinkRenderer?: (item: BreadcrumbItem) => React.JSX.Element;
+    customLinkRenderer?: (item: CustomBreadcrumbItem) => React.JSX.Element;
 }
 
-export function Breadcrumb({
+export function CustomBreadcrumb({
     items,
     separator = <ChevronRight size={20} strokeWidth={1} />,
     activeClassName,
     linkClassName,
     separatorClassName,
     customLinkRenderer,
-}: BreadcrumbProps) {
+}: CustomBreadcrumbProps) {
     if (!items || items.length === 0) {
         return null;
     }

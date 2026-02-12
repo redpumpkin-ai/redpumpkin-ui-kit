@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Breadcrumb } from "./breadcrumb";
+import { CustomBreadcrumb } from "./breadcrumb";
 
-const meta: Meta<typeof Breadcrumb> = {
+const meta: Meta<typeof CustomBreadcrumb> = {
     title: "Custom/Breadcrumb",
-    component: Breadcrumb,
+    component: CustomBreadcrumb,
     tags: ["autodocs"],
     argTypes: {
         items: {
