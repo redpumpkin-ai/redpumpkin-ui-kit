@@ -300,16 +300,31 @@ export function SidebarUserProfile({
     email,
     avatar,
     menu,
+    menuOpen = false,
+    setMenuOpen,
 }: {
     name: string;
     email: string;
     avatar?: string;
     menu?: React.ReactNode;
+    menuOpen?: boolean;
+    setMenuOpen?: (open: boolean) => void;
 }) {
     const { open } = useSidebar();
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    useEffect(() => {
+        setIsOpen(menuOpen);
+    }, [menuOpen]);
 
     return (
-        <Popover>
+        <Popover
+            open={isOpen}
+            onOpenChange={() => {
+                setIsOpen(prev => !prev);
+                setMenuOpen?.(!isOpen);
+            }}
+            >
             <PopoverTrigger asChild>
                 <div className="cursor-pointer">
                     <div className="flex gap-3 items-center">

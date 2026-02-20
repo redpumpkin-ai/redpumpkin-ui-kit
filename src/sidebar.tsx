@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
     Home,
     BookOpen,
@@ -30,6 +32,7 @@ import {
 
 export function AppSidebar() {
     const { open } = useSidebar();
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
         <Sidebar>
@@ -105,12 +108,14 @@ export function AppSidebar() {
                 <SidebarUserProfile
                     name="John Doe"
                     email="john.doe.support@gmail.com"
+                    menuOpen={isOpen}
+                    setMenuOpen={setIsOpen}
                     menu={
                         <>
                             <SidebarUserProfileMenuItem
                                 label="Invite people"
                                 icon={<Plus size={16} />}
-                                onClick={() => {}}
+                                onClick={() => setIsOpen(false)}
                             />
                             <li className="h-px bg-border"></li>
                             <SidebarUserProfileMenuItem
