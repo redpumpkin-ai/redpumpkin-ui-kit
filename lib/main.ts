@@ -68,3 +68,6 @@ export * from './components/custom/progress'
 export * from './components/custom/role-badge'
 export * from './components/custom/sidebar'
 export * from './components/custom/token-usage'
+
+// export cn from './lib/utils'
+export * from './utils'
