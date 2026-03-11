@@ -22,15 +22,16 @@ const badgeVariants = cva(
 export interface BadgeProps extends VariantProps<typeof badgeVariants> {
     children: React.ReactNode;
     className?: string;
+    style?: React.CSSProperties;
     color?: string;
     showDot?: boolean;
 }
 
-export function Badge({ children, className, color = colors.green, size, showDot = true }: BadgeProps) {
+export function Badge({ children, className, color = colors.green, size, showDot = true, style }: BadgeProps) {
     return (
         <span
             className={cn(badgeVariants({ size }), className)}
-            style={{ color }}
+            style={{ color, ...style }}
             >
             {showDot && (
                 <span
