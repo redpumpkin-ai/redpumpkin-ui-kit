@@ -336,7 +336,7 @@ export function SidebarUserProfile({
                                             src={avatar}
                                             alt={name}
                                             loading="lazy"
-                                            className="block w-full h-full object-cover"
+                                            className="block w-full h-full object-cover rounded-full"
                                         />
                                     ) : (
                                         <img
@@ -401,7 +401,7 @@ export function SidebarUserProfileMenuItem({
         <li>
             <button
                 type="button"
-                className={cn("flex w-full p-2.5 text-left rounded-md transition-colors hover:bg-muted", className)}
+                className={cn("flex w-full p-2.5 text-left items-center rounded-md transition-colors hover:bg-muted", className)}
                 onClick={onClick}
                 >
                 <span className="flex-grow">{label}</span>
